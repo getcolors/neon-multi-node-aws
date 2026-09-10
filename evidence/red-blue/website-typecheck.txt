@@ -1,0 +1,11 @@
+
+> colors-website@0.0.1 typecheck /home/ubuntu/code/getcolors/colors-website
+> astro check
+
+18:23:11 [types] Generated 128ms
+18:23:11 [check] Getting diagnostics for Astro files in /home/ubuntu/code/getcolors/colors-website...
+Result (47 files): 
+- 0 errors
+- 0 warnings
+- 0 hints
+

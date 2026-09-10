@@ -116,3 +116,22 @@ This is a five-machine, single-AZ functional deployment. Three safekeepers
 provide WAL quorum; compute and pageserver have no automatic failover. The
 cache rebuild test uses S3 and surviving WAL, and does not establish an RPO for
 complete loss of every storage member. No cross-AZ availability claim is made.
+
+## Catalog publication
+
+Public package `413eec3`, Context Skill `ea584de`, and website `8ff77ac`
+were pushed to main. The package remains featured and now exposes Red, Green,
+and Blue runtime choices. The website passed typecheck (47 files, zero issues),
+a 153-page build, both architecture image builds, and production deployment in
+[CI run 34501822386](https://github.com/getcolors/colors-website/actions/runs/34501822386).
+
+Live checks on `https://www.getcolors.ai` returned HTTP 200 for the package,
+Red and Blue routes, updated context and featured page, plus their social cards.
+All four downloaded skill archives matched their committed content hashes; each
+package payload contains the final source pin and the context archive contains
+the complete second-cycle recovery and cleanup proof. See
+`website-live-verification.json` and `website-ci.json`.
+
+The initial Python urllib probe received HTTP 403; curl subsequently fetched and
+validated all required routes and archives. This records client-specific observed
+behavior, not a diagnosed website defect.

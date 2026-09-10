@@ -1,0 +1,64 @@
+{
+  "base": "https://www.getcolors.ai",
+  "checked_at": "2026-09-10T16:26:27Z",
+  "routes": [
+    {
+      "path": "/getcolors/neon-multi-node",
+      "http": 200,
+      "og_images": [
+        "https://www.getcolors.ai/og-source-getcolors-neon-multi-node-blue-v1.png"
+      ]
+    },
+    {
+      "path": "/getcolors/neon-multi-node/package-neon-multi-node-red",
+      "http": 200,
+      "og_images": [
+        "https://www.getcolors.ai/og-skill-getcolors-neon-multi-node-package-neon-multi-node-red-blue-v1.png"
+      ]
+    },
+    {
+      "path": "/getcolors/neon-multi-node/package-neon-multi-node-blue",
+      "http": 200,
+      "og_images": [
+        "https://www.getcolors.ai/og-skill-getcolors-neon-multi-node-package-neon-multi-node-blue-blue-v1.png"
+      ]
+    },
+    {
+      "path": "/getcolors/skills/neon-multi-node",
+      "http": 200,
+      "og_images": [
+        "https://www.getcolors.ai/og-skill-getcolors-skills-neon-multi-node-blue-v3.png"
+      ]
+    },
+    {
+      "path": "/featured",
+      "http": 200,
+      "og_images": [
+        "https://www.getcolors.ai/og-featured-blue-v1.png"
+      ]
+    }
+  ],
+  "archives": [
+    {
+      "name": "package-neon-multi-node-red",
+      "sha256": "3d3dc6283f3e5c7d0c0015055e101244ad7e32c7c3baa045fbd6890874b96379",
+      "matches_committed_artifact": true
+    },
+    {
+      "name": "package-neon-multi-node-green",
+      "sha256": "a37413d6005b9510bce78e1084d29ac6efecfbf597dd4435ef0063b2606198a2",
+      "matches_committed_artifact": true
+    },
+    {
+      "name": "package-neon-multi-node-blue",
+      "sha256": "1118bafd5fd55921a9e2bc38793a843d11cc586dc51426769bcaed61e9ba5040",
+      "matches_committed_artifact": true
+    },
+    {
+      "name": "neon-multi-node",
+      "sha256": "520afba04bee4fccb71539c2e6c8aa81dcfb9c6d625135fd143de9faff7cc0ad",
+      "matches_committed_artifact": true
+    }
+  ],
+  "verified": true
+}
