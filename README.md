@@ -12,6 +12,11 @@ and SSH/database access is restricted to the configured operator CIDR.
 
 ## Commands
 
+Choose `./green` (Babashka), `./red` (Bun), or `./blue` (uv/Python). All three
+use this profile's same `colors.yml`, SSH aliases and Terraform state. Run one
+lifecycle operation at a time. For example, replace `green` below with `red`
+or `blue` to use that runtime.
+
 ```sh
 ./green build
 ./green create --dry-run
@@ -53,6 +58,12 @@ Reusing this profile after cleanup requires clearing or archiving its prior
 local evidence deliberately; a new deployment should have its own profile and
 new fixed tenant/timeline identities. Never reuse an active deployment's profile
 against a different state bucket.
+
+For separate lifecycle evidence, `check_public.py --witness-file <path>` and
+`evidence/check_resources.py --baseline <path>` preserve each run's exact witness
+and resource inventory. Reuse the same paths for continuity and absence checks
+within that lifecycle. The red/blue verification is recorded under
+`evidence/red-blue/`; the original Green evidence remains unchanged.
 
 This is a single-AZ functional deployment. Three separate safekeeper machines
 provide WAL quorum; compute and pageserver have no automatic failover. Storage

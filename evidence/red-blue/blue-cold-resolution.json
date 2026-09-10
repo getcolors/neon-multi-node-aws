@@ -1,0 +1,37 @@
+[
+  {
+    "distribution": "colors_compute_blue-0.1.0.dist-info",
+    "url": {
+      "url": "https://github.com/getcolors/colors-compute.git",
+      "vcs_info": {
+        "vcs": "git",
+        "commit_id": "09ec539e75dc21c4dafb019eb8f9da276e695f6f",
+        "requested_revision": "09ec539e75dc21c4dafb019eb8f9da276e695f6f"
+      },
+      "subdirectory": "blue"
+    }
+  },
+  {
+    "distribution": "package_neon_multi_node_blue-0.1.0.dist-info",
+    "url": {
+      "url": "https://github.com/getcolors/neon-multi-node.git",
+      "vcs_info": {
+        "vcs": "git",
+        "commit_id": "038e93d524552ef36fb0fff5f306352e68283bff",
+        "requested_revision": "038e93d524552ef36fb0fff5f306352e68283bff"
+      },
+      "subdirectory": "blue"
+    }
+  },
+  {
+    "distribution": "blue-0.1.0.dist-info",
+    "url": {
+      "url": "https://github.com/getcolors/blue.git",
+      "vcs_info": {
+        "vcs": "git",
+        "commit_id": "e29a7fc5a7a2895eacb882fc65520c2cdbab96c9",
+        "requested_revision": "e29a7fc5a7a2895eacb882fc65520c2cdbab96c9"
+      }
+    }
+  }
+]

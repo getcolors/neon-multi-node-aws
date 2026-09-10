@@ -1,0 +1,24 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0
+rootdir: /home/ubuntu/code/getcolors/blue
+configfile: pyproject.toml
+testpaths: tests
+plugins: asyncio-1.4.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 103 items
+
+tests/test_advice.py ....................................                [ 34%]
+tests/test_ansible.py ........                                           [ 42%]
+tests/test_cli.py .........                                              [ 51%]
+tests/test_dry_run.py ...                                                [ 54%]
+tests/test_floci_zookeeper.py s                                          [ 55%]
+tests/test_gates.py ..                                                   [ 57%]
+tests/test_package_conventions.py .                                      [ 58%]
+tests/test_progress.py .....                                             [ 63%]
+tests/test_runtime.py .....                                              [ 67%]
+tests/test_scaffold.py ......                                            [ 73%]
+tests/test_tofu.py .......                                               [ 80%]
+tests/test_workflow.py ..................                                [ 98%]
+tests/test_zookeeper.py ..                                               [100%]
+
+======================== 102 passed, 1 skipped in 2.03s ========================

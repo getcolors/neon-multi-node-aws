@@ -1,0 +1,8 @@
+>>> neon-multi-node/start (delete)
+<<< neon-multi-node/start (56ms)
+dry-run: would run neon-multi-node/ansible (delete)
+dry-run: would run neon-multi-node/ssh-config (delete)
+dry-run: would run neon-multi-node/dns (delete)
+dry-run: would run neon-multi-node/storage (delete)
+dry-run: would run neon-multi-node/infrastructure (delete)
+dry-run: would run neon-multi-node/backend-finalize (delete)

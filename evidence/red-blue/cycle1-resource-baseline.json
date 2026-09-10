@@ -1,0 +1,47 @@
+{
+  "profile": "neon-multi-node-aws",
+  "region": "us-east-1",
+  "account": "251213589273",
+  "instance_ids": [
+    "i-0c96eb2a12e33e40b",
+    "i-00f6da9359001e385",
+    "i-0ab8dbe7527efb129",
+    "i-0a07dce1f8a3d1d82",
+    "i-0967c43c1d20e09b1"
+  ],
+  "volumes": [
+    {
+      "id": "vol-0baf2ebc95e5d1c93",
+      "device": "/dev/sda1",
+      "root": true,
+      "delete_on_termination": true
+    },
+    {
+      "id": "vol-0b087837c3ff04a17",
+      "device": "/dev/sda1",
+      "root": true,
+      "delete_on_termination": true
+    },
+    {
+      "id": "vol-05595b872ff685c10",
+      "device": "/dev/sda1",
+      "root": true,
+      "delete_on_termination": true
+    },
+    {
+      "id": "vol-06bcbd3da7120066d",
+      "device": "/dev/sda1",
+      "root": true,
+      "delete_on_termination": true
+    },
+    {
+      "id": "vol-060b093b86d5175f1",
+      "device": "/dev/sda1",
+      "root": true,
+      "delete_on_termination": true
+    }
+  ],
+  "vpc_ids": [
+    "vpc-072e3cf61738630e8"
+  ]
+}

@@ -1,0 +1,91 @@
+OK agent-network/blue: canonical updater, singleton adapter
+OK agent-network/green: canonical updater, singleton adapter
+OK agent-network/red: canonical updater, singleton adapter
+OK agent-network-doks/blue: managed cluster; no operator VM SSH
+OK agent-network-doks/green: managed cluster; no operator VM SSH
+OK agent-network-doks/red: managed cluster; no operator VM SSH
+OK agent-network-k8s/blue: managed cluster; no operator VM SSH
+OK agent-network-k8s/green: managed cluster; no operator VM SSH
+OK agent-network-k8s/red: managed cluster; no operator VM SSH
+OK airflow/blue: canonical updater, joined adapter
+OK airflow/green: canonical updater, joined adapter
+OK airflow/red: canonical updater, joined adapter
+OK alice/green: canonical updater (alice reviewed policy/migration variant), joined adapter
+OK automq/blue: canonical updater, joined adapter
+OK automq/green: canonical updater, joined adapter
+OK automq/red: canonical updater, joined adapter
+OK clickhouse/blue: canonical updater, joined adapter
+OK clickhouse/green: canonical updater, joined adapter
+OK clickhouse/red: canonical updater, joined adapter
+OK clickstack/blue: canonical updater, singleton adapter
+OK clickstack/green: canonical updater, singleton adapter
+OK clickstack/red: canonical updater, singleton adapter
+OK dbos/blue: canonical updater, joined adapter
+OK dbos/green: canonical updater, joined adapter
+OK dbos/red: canonical updater, joined adapter
+OK github-dwh/blue: canonical updater, singleton adapter
+OK k3s/blue: canonical updater, joined adapter
+OK k3s/green: canonical updater, joined adapter
+OK k3s/red: canonical updater, joined adapter
+OK k8s/blue: canonical updater, joined adapter
+OK k8s/green: canonical updater, joined adapter
+OK k8s/red: canonical updater, joined adapter
+OK langfuse/blue: canonical updater, joined adapter
+OK langfuse/green: canonical updater, joined adapter
+OK langfuse/red: canonical updater, joined adapter
+OK mysql-agy/blue: canonical updater, joined adapter
+OK mysql-agy/green: canonical updater, joined adapter
+OK mysql-agy/red: canonical updater, joined adapter
+OK mysql-ha/blue: canonical updater, joined adapter
+OK mysql-ha/green: canonical updater, joined adapter
+OK mysql-ha/red: canonical updater, joined adapter
+OK n8n/blue: canonical updater, singleton adapter
+OK n8n/green: canonical updater, singleton adapter
+OK n8n/red: canonical updater, singleton adapter
+OK neon/blue: canonical updater, singleton adapter
+OK neon/green: canonical updater, singleton adapter
+OK neon/red: canonical updater, singleton adapter
+OK neon-multi-node/blue: canonical updater, joined adapter
+OK neon-multi-node/green: canonical updater, joined adapter
+OK neon-multi-node/red: canonical updater, joined adapter
+OK netbird/blue: canonical updater, singleton adapter
+OK netbird/green: canonical updater, singleton adapter
+OK netbird/red: canonical updater, singleton adapter
+OK once/blue: canonical updater, joined adapter
+OK once/green: canonical updater, joined adapter
+OK once/red: canonical updater, joined adapter
+OK postgres-agy/blue: canonical updater, joined adapter
+OK postgres-agy/green: canonical updater, joined adapter
+OK postgres-agy/red: canonical updater, joined adapter
+OK postgres-ha/blue: canonical updater, joined adapter
+OK postgres-ha/green: canonical updater, joined adapter
+OK postgres-ha/red: canonical updater, joined adapter
+OK posthog/blue: canonical updater, singleton adapter
+OK posthog/green: canonical updater, singleton adapter
+OK posthog/red: canonical updater, singleton adapter
+OK rama/green: canonical updater, joined adapter
+OK redis/green: canonical updater, joined adapter
+OK restate/blue: canonical updater, singleton adapter
+OK restate/green: canonical updater, singleton adapter
+OK restate/red: canonical updater, singleton adapter
+OK rybbit/blue: canonical updater, singleton adapter
+OK rybbit/green: canonical updater, singleton adapter
+OK rybbit/red: canonical updater, singleton adapter
+OK signoz/blue: canonical updater, singleton adapter
+OK signoz/green: canonical updater, singleton adapter
+OK signoz/red: canonical updater, singleton adapter
+OK temporal/blue: canonical updater, singleton adapter
+OK temporal/green: canonical updater, singleton adapter
+OK temporal/red: canonical updater, singleton adapter
+OK umami/blue: canonical updater, singleton adapter
+OK umami/green: canonical updater, singleton adapter
+OK umami/red: canonical updater, singleton adapter
+OK vaultwarden/blue: canonical updater, joined adapter
+OK vaultwarden/green: canonical updater, joined adapter
+OK vaultwarden/red: canonical updater, joined adapter
+OK walter/green: canonical updater (walter reviewed policy/migration variant), joined adapter
+OK wavehouse/blue: canonical updater, singleton adapter
+OK wavehouse/green: canonical updater, singleton adapter
+OK wavehouse/red: canonical updater, singleton adapter
+SKIP dotfiles: configures the workstation; creates no compute
+89 color contracts checked; 0 failure(s)

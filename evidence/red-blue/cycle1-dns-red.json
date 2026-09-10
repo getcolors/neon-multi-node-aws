@@ -1,0 +1,13 @@
+{
+  "domain": "neon-multi-node-aws.bigconfig.online",
+  "records": [
+    {
+      "id": "922777e0a8219c6d361c81db50aea788",
+      "name": "neon-multi-node-aws.bigconfig.online",
+      "type": "A",
+      "content": "13.220.56.241",
+      "proxied": false
+    }
+  ],
+  "verified": true
+}

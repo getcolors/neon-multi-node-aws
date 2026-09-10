@@ -1,0 +1,62 @@
+{
+  "profile": "neon-multi-node-aws",
+  "buckets": [
+    {
+      "name": "neon-multi-node-aws-state-251213589273-us-east-1",
+      "public_access_blocked": true,
+      "encrypted": true,
+      "ownership_tags": {
+        "colors:purpose": "managed-backend",
+        "colors:owner": "251213589273",
+        "colors:profile": "neon-multi-node-aws"
+      }
+    },
+    {
+      "name": "neon-multi-node-aws-neon-251213589273-us-east-1",
+      "public_access_blocked": true,
+      "encrypted": true,
+      "ownership_tags": {
+        "colors:owner": "neon-multi-node-storage",
+        "colors:profile": "neon-multi-node-aws"
+      }
+    }
+  ],
+  "application_objects": [
+    {
+      "key": "neon-multi-node-aws/data/.colors-generation",
+      "size": 1
+    },
+    {
+      "key": "neon-multi-node-aws/data/.colors-init",
+      "size": 19
+    },
+    {
+      "key": "neon-multi-node-aws/data/.colors-ready",
+      "size": 19
+    },
+    {
+      "key": "neon-multi-node-aws/data/pageserver/tenants/9529d95d734cf1a3c329f69c0fe2f1d0/tenant-manifest-00000001.json",
+      "size": 57
+    },
+    {
+      "key": "neon-multi-node-aws/data/pageserver/tenants/9529d95d734cf1a3c329f69c0fe2f1d0/timelines/11ddd8a0dadbfd8df065ca17967a47eb/000000000000000000000000000000000000-FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF__00000000014E8F20-00000000014E8F99-00000001",
+      "size": 23240704
+    },
+    {
+      "key": "neon-multi-node-aws/data/pageserver/tenants/9529d95d734cf1a3c329f69c0fe2f1d0/timelines/11ddd8a0dadbfd8df065ca17967a47eb/index_part.json-00000001",
+      "size": 434
+    },
+    {
+      "key": "neon-multi-node-aws/data/pageserver/tenants/9529d95d734cf1a3c329f69c0fe2f1d0/timelines/11ddd8a0dadbfd8df065ca17967a47eb/initdb.tar.zst",
+      "size": 1563110
+    },
+    {
+      "key": "neon-multi-node-aws/data/safekeeper/9529d95d734cf1a3c329f69c0fe2f1d0/11ddd8a0dadbfd8df065ca17967a47eb/000000010000000000000001",
+      "size": 16777216
+    }
+  ],
+  "closed_wal_segments": 1,
+  "ownership_markers_verified": true,
+  "application_state_list_denied": true,
+  "application_state_read_denied": true
+}

@@ -1,0 +1,24 @@
+PASS trusted TLS certificate, matching DNS name, encrypted PostgreSQL session
+PASS wrong password refused
+PASS passwordless connection refused
+PASS plaintext connection refused
+PASS application role cannot escalate to superuser
+PASS exact persistent witness read through external TLS endpoint
+PASS authenticated write/read with one deterministic smoke row
+PASS entry and all five generated node SSH aliases
+{
+  "profile": "neon-multi-node-aws",
+  "gates": [
+    "trusted TLS certificate, matching DNS name, encrypted PostgreSQL session",
+    "wrong password refused",
+    "passwordless connection refused",
+    "plaintext connection refused",
+    "application role cannot escalate to superuser",
+    "exact persistent witness read through external TLS endpoint",
+    "authenticated write/read with one deterministic smoke row",
+    "entry and all five generated node SSH aliases"
+  ],
+  "passed": 8,
+  "continuity": true,
+  "checked_at": "2026-09-10T15:24:26Z"
+}

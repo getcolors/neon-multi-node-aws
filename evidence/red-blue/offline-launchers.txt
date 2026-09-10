@@ -1,0 +1,3 @@
+PASS green copied launcher, empty credential environment, nested discovery, build and four dry-run verbs
+PASS red copied launcher, empty credential environment, nested discovery, build and four dry-run verbs
+PASS blue copied launcher, empty credential environment, nested discovery, build and four dry-run verbs

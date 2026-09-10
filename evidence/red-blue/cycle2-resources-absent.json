@@ -1,0 +1,160 @@
+{
+  "profile": "neon-multi-node-aws",
+  "region": "us-east-1",
+  "instances": [
+    {
+      "id": "i-0c96eb2a12e33e40b",
+      "name": "neon-multi-node-aws-compute-0",
+      "state": "terminated",
+      "public_ip": null,
+      "private_ip": null,
+      "root_device": "/dev/sda1",
+      "ebs_volumes": []
+    },
+    {
+      "id": "i-00f6da9359001e385",
+      "name": "neon-multi-node-aws-pageserver-0",
+      "state": "terminated",
+      "public_ip": null,
+      "private_ip": null,
+      "root_device": "/dev/sda1",
+      "ebs_volumes": []
+    },
+    {
+      "id": "i-0ab8dbe7527efb129",
+      "name": "neon-multi-node-aws-safekeeper-0",
+      "state": "terminated",
+      "public_ip": null,
+      "private_ip": null,
+      "root_device": "/dev/sda1",
+      "ebs_volumes": []
+    },
+    {
+      "id": "i-0a07dce1f8a3d1d82",
+      "name": "neon-multi-node-aws-safekeeper-1",
+      "state": "terminated",
+      "public_ip": null,
+      "private_ip": null,
+      "root_device": "/dev/sda1",
+      "ebs_volumes": []
+    },
+    {
+      "id": "i-0d24f9aa94a15a5be",
+      "name": "neon-multi-node-aws-safekeeper-1",
+      "state": "terminated",
+      "public_ip": null,
+      "private_ip": null,
+      "root_device": "/dev/sda1",
+      "ebs_volumes": []
+    },
+    {
+      "id": "i-044e67b87c437f2df",
+      "name": "neon-multi-node-aws-safekeeper-0",
+      "state": "terminated",
+      "public_ip": null,
+      "private_ip": null,
+      "root_device": "/dev/sda1",
+      "ebs_volumes": []
+    },
+    {
+      "id": "i-0967c43c1d20e09b1",
+      "name": "neon-multi-node-aws-safekeeper-2",
+      "state": "terminated",
+      "public_ip": null,
+      "private_ip": null,
+      "root_device": "/dev/sda1",
+      "ebs_volumes": []
+    },
+    {
+      "id": "i-0a788af90fbad5661",
+      "name": "neon-multi-node-aws-compute-0",
+      "state": "terminated",
+      "public_ip": null,
+      "private_ip": null,
+      "root_device": "/dev/sda1",
+      "ebs_volumes": []
+    },
+    {
+      "id": "i-0220014ede323a591",
+      "name": "neon-multi-node-aws-pageserver-0",
+      "state": "terminated",
+      "public_ip": null,
+      "private_ip": null,
+      "root_device": "/dev/sda1",
+      "ebs_volumes": []
+    },
+    {
+      "id": "i-0b5c3afff5ac7a3f1",
+      "name": "neon-multi-node-aws-safekeeper-2",
+      "state": "terminated",
+      "public_ip": null,
+      "private_ip": null,
+      "root_device": "/dev/sda1",
+      "ebs_volumes": []
+    }
+  ],
+  "Vpcs": [],
+  "Subnets": [],
+  "RouteTables": [],
+  "InternetGateways": [],
+  "SecurityGroups": [],
+  "KeyPairs": [],
+  "recorded_ebs_volumes": [
+    {
+      "id": "vol-06d5106f19789112d",
+      "device": "/dev/sda1",
+      "root": true,
+      "delete_on_termination": true
+    },
+    {
+      "id": "vol-0fd442fa6e8aed2ce",
+      "device": "/dev/sda1",
+      "root": true,
+      "delete_on_termination": true
+    },
+    {
+      "id": "vol-072fc50e6d6c8236e",
+      "device": "/dev/sda1",
+      "root": true,
+      "delete_on_termination": true
+    },
+    {
+      "id": "vol-00a0b19aa44134164",
+      "device": "/dev/sda1",
+      "root": true,
+      "delete_on_termination": true
+    },
+    {
+      "id": "vol-0b5336f1b6fed9115",
+      "device": "/dev/sda1",
+      "root": true,
+      "delete_on_termination": true
+    }
+  ],
+  "Volumes": [],
+  "VpcDependencies": {
+    "Vpcs": [],
+    "Subnets": [],
+    "RouteTables": [],
+    "InternetGateways": [],
+    "SecurityGroups": [],
+    "NetworkInterfaces": [],
+    "NetworkAcls": []
+  },
+  "buckets": [
+    {
+      "name": "neon-multi-node-aws-state-251213589273-us-east-1",
+      "status": "absent",
+      "code": "404"
+    },
+    {
+      "name": "neon-multi-node-aws-neon-251213589273-us-east-1",
+      "status": "absent",
+      "code": "404"
+    }
+  ],
+  "iam_users": [],
+  "remaining_resource_count": 0,
+  "all_recorded_volumes_absent": true,
+  "remaining_billable_resource_count": 0
+}

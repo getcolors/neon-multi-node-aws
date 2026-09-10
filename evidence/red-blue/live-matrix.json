@@ -1,0 +1,231 @@
+{
+  "profile": "neon-multi-node-aws",
+  "date": "2026-09-10",
+  "scope": "Two independent single-AZ AWS lifecycles, both native colors and cross-runtime state interoperability.",
+  "pins": {
+    "red_sdk": "7636bee6a7575485ebaf621f4b1834bdcea59738",
+    "blue_sdk": "e29a7fc5a7a2895eacb882fc65520c2cdbab96c9",
+    "colors_compute": "09ec539e75dc21c4dafb019eb8f9da276e695f6f",
+    "package_source_used_for_live_cycles": "038e93d524552ef36fb0fff5f306352e68283bff"
+  },
+  "cycles": [
+    {
+      "cycle": 1,
+      "fresh_create": "red",
+      "reconverge": "blue",
+      "recovery_runtime": "blue",
+      "delete_runtime": "blue",
+      "baseline": "cycle1-resource-baseline.json",
+      "instance_ids": [
+        "i-0c96eb2a12e33e40b",
+        "i-00f6da9359001e385",
+        "i-0ab8dbe7527efb129",
+        "i-0a07dce1f8a3d1d82",
+        "i-0967c43c1d20e09b1"
+      ],
+      "volume_ids": [
+        "vol-0baf2ebc95e5d1c93",
+        "vol-0b087837c3ff04a17",
+        "vol-05595b872ff685c10",
+        "vol-06bcbd3da7120066d",
+        "vol-060b093b86d5175f1"
+      ],
+      "public_gates": {
+        "red": {
+          "passed": 8,
+          "checked_at": "2026-09-10T15:16:34Z"
+        },
+        "blue": {
+          "passed": 8,
+          "checked_at": "2026-09-10T15:24:26Z"
+        },
+        "recovered": {
+          "passed": 8,
+          "checked_at": "2026-09-10T15:30:02Z"
+        }
+      },
+      "continuity": {
+        "same_five_instances": true,
+        "same_five_volumes": true,
+        "same_six_containers": true
+      },
+      "recovery": {
+        "checked_at": "2026-09-10T15:30:12Z",
+        "acknowledged_witnesses_verified": 3,
+        "members_covered": [
+          "safekeeper-0",
+          "safekeeper-1",
+          "safekeeper-2"
+        ],
+        "s3_attachment_generation": 2,
+        "uncertain_write_observed": {
+          "present": true,
+          "values": [
+            "possibly-committed"
+          ],
+          "interpretation": "Observed after recovery; a timeout did not establish commit or rollback."
+        },
+        "no_quorum": {
+          "delta": "0:00:45.182715",
+          "rc": 0,
+          "stdout": "PASS no write acknowledgement without quorum; transaction outcome uncertain until recovery"
+        }
+      },
+      "cleanup": {
+        "remaining_resource_count": 0,
+        "remaining_billable_resource_count": 0,
+        "all_recorded_volumes_absent": true,
+        "resource_evidence": "cycle1-resources-absent.json",
+        "dns_evidence": "cycle1-dns-absent.json",
+        "local_evidence": "cycle1-local-absent.json"
+      },
+      "additional_gates": {
+        "all_five_hosts_and_six_containers_healthy": true,
+        "scoped_storage_state_access_denied": true,
+        "fresh_closed_wal_objects": true,
+        "network_isolation": true,
+        "dns_target_verified": true,
+        "default_delete_guard_refused": true,
+        "all_five_writer_stop_checks": true,
+        "evidence": [
+          "cycle1-services-red.json",
+          "cycle1-storage-red.json",
+          "cycle1-services-blue.json",
+          "cycle1-storage-blue.json",
+          "cycle1-services-recovered.json",
+          "cycle1-storage-recovered.json",
+          "cycle1-network-red.json",
+          "cycle1-dns-red.json",
+          "blue-delete-guard.txt",
+          "cycle1-blue-writer-stop.txt"
+        ]
+      }
+    },
+    {
+      "cycle": 2,
+      "fresh_create": "blue",
+      "reconverge": "red",
+      "recovery_runtime": "red",
+      "delete_runtime": "red",
+      "baseline": "cycle2-resource-baseline.json",
+      "instance_ids": [
+        "i-0d24f9aa94a15a5be",
+        "i-044e67b87c437f2df",
+        "i-0a788af90fbad5661",
+        "i-0220014ede323a591",
+        "i-0b5c3afff5ac7a3f1"
+      ],
+      "volume_ids": [
+        "vol-06d5106f19789112d",
+        "vol-0fd442fa6e8aed2ce",
+        "vol-072fc50e6d6c8236e",
+        "vol-00a0b19aa44134164",
+        "vol-0b5336f1b6fed9115"
+      ],
+      "public_gates": {
+        "blue": {
+          "passed": 8,
+          "checked_at": "2026-09-10T15:56:19Z"
+        },
+        "red": {
+          "passed": 8,
+          "checked_at": "2026-09-10T16:04:08Z"
+        },
+        "recovered": {
+          "passed": 8,
+          "checked_at": "2026-09-10T16:09:47Z"
+        }
+      },
+      "continuity": {
+        "same_five_instances": true,
+        "same_five_volumes": true,
+        "same_six_containers": true
+      },
+      "recovery": {
+        "checked_at": "2026-09-10T16:09:40Z",
+        "acknowledged_witnesses_verified": 3,
+        "members_covered": [
+          "safekeeper-0",
+          "safekeeper-1",
+          "safekeeper-2"
+        ],
+        "s3_attachment_generation": 2,
+        "uncertain_write_observed": {
+          "present": true,
+          "values": [
+            "possibly-committed"
+          ],
+          "interpretation": "Observed after recovery; a timeout did not establish commit or rollback."
+        },
+        "no_quorum": {
+          "delta": "0:00:45.132080",
+          "rc": 0,
+          "stdout": "PASS no write acknowledgement without quorum; transaction outcome uncertain until recovery"
+        }
+      },
+      "cleanup": {
+        "remaining_resource_count": 0,
+        "remaining_billable_resource_count": 0,
+        "all_recorded_volumes_absent": true,
+        "resource_evidence": "cycle2-resources-absent.json",
+        "dns_evidence": "cycle2-dns-absent.json",
+        "local_evidence": "cycle2-local-absent.json"
+      },
+      "additional_gates": {
+        "all_five_hosts_and_six_containers_healthy": true,
+        "scoped_storage_state_access_denied": true,
+        "fresh_closed_wal_objects": true,
+        "network_isolation": true,
+        "dns_target_verified": true,
+        "default_delete_guard_refused": true,
+        "all_five_writer_stop_checks": true,
+        "evidence": [
+          "cycle2-services-blue.json",
+          "cycle2-storage-blue.json",
+          "cycle2-services-red.json",
+          "cycle2-storage-red.json",
+          "cycle2-services-recovered.json",
+          "cycle2-storage-recovered.json",
+          "cycle2-network-blue.json",
+          "cycle2-dns-blue.json",
+          "red-delete-guard.txt",
+          "cycle2-red-writer-stop.txt"
+        ]
+      }
+    }
+  ],
+  "final_repeat_delete": {
+    "runtimes": [
+      "red",
+      "blue"
+    ],
+    "resources_remaining": 0,
+    "billable_resources_remaining": 0,
+    "dns_absent": true,
+    "owned_ssh_artifacts_absent": true,
+    "evidence": [
+      "red-delete-repeat-2.txt",
+      "blue-delete-repeat-2.txt",
+      "cycle2-resources-after-repeat.json",
+      "cycle2-dns-after-repeat.json",
+      "cycle2-local-after-repeat.json"
+    ]
+  },
+  "timestamp_note": "checked_at values come from probe JSON; final absence probes do not record timestamps, so none are inferred.",
+  "limits": [
+    "Single availability zone",
+    "Compute and pageserver have no automatic failover",
+    "S3 uploads are asynchronous; no complete storage loss RPO is established"
+  ],
+  "final_publication": {
+    "package_head": "413eec3a863744a6a53ea1b552461b983ce7bafb",
+    "launcher_source_pin": "1eb421263e0aa2b6552948355c7591a1c749dae6",
+    "runtime_change_from_live_cycles": false,
+    "published_launcher_checks": "published-final-launchers.txt",
+    "colors_verified": [
+      "green",
+      "red",
+      "blue"
+    ]
+  }
+}

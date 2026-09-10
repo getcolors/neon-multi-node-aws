@@ -1,0 +1,16 @@
+{
+  "bun": "1.3.10",
+  "uv": "uv 0.12.6 (aarch64-unknown-linux-gnu)",
+  "babashka": "babashka v1.13.219",
+  "opentofu": "OpenTofu v1.11.5",
+  "aws": "aws-cli/2.35.11 Python/3.14.7 Linux/6.17.0-1018-oracle source/aarch64.ubuntu.24",
+  "ansible": "ansible-playbook [core 2.20.3]",
+  "psql": "psql (PostgreSQL) 18.6",
+  "operator_architecture": "aarch64",
+  "pins": {
+    "red": "7636bee6a7575485ebaf621f4b1834bdcea59738",
+    "blue": "e29a7fc5a7a2895eacb882fc65520c2cdbab96c9"
+  },
+  "package_checkout_at_version_capture": "62e63a7a63ae5c5ab46cbb73b8dad06d14ab0734",
+  "live_application_source": "038e93d524552ef36fb0fff5f306352e68283bff"
+}

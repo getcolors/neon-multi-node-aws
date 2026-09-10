@@ -1,0 +1,8 @@
+>>> neon-multi-node/start (create)
+<<< neon-multi-node/start (15ms)
+dry-run: would run neon-multi-node/infrastructure (create)
+dry-run: would run neon-multi-node/storage (create)
+dry-run: would run neon-multi-node/dns (create)
+dry-run: would run neon-multi-node/ssh-config (create)
+dry-run: would run neon-multi-node/ansible (create)
+dry-run: would run neon-multi-node/acceptance (create)

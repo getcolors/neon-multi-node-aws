@@ -1,0 +1,50 @@
+>>> neon-multi-node/start (create)
+<<< neon-multi-node/start (28ms)
+>>> neon-multi-node/infrastructure (create)
+>>> colors-compute/fan-out (create)
+<<< colors-compute/fan-out (0ms)
+>>> colors-compute/node (create)
+>>> colors-compute/node (create)
+>>> colors-compute/node (create)
+>>> colors-compute/node (create)
+>>> colors-compute/node (create)
+<<< colors-compute/node (38471ms)
+<<< colors-compute/node (51467ms)
+<<< colors-compute/node (61859ms)
+<<< colors-compute/node (64038ms)
+<<< colors-compute/node (70553ms)
+>>> colors-compute/join (create)
+<<< colors-compute/join (0ms)
+<<< neon-multi-node/infrastructure (212094ms)
+>>> neon-multi-node/storage (create)
+<<< neon-multi-node/storage (22987ms)
+>>> neon-multi-node/dns (create)
+<<< neon-multi-node/dns (5510ms)
+>>> neon-multi-node/ssh-config (create)
+<<< neon-multi-node/ssh-config (1589ms)
+>>> neon-multi-node/ansible (create)
+<<< neon-multi-node/ansible (125671ms)
+>>> neon-multi-node/acceptance (create)
+<<< neon-multi-node/acceptance (16479ms)
+PASS trusted TLS certificate, matching DNS name, encrypted PostgreSQL session
+PASS wrong password refused
+PASS passwordless connection refused
+PASS plaintext connection refused
+PASS application role cannot escalate to superuser
+PASS authenticated write/read with one deterministic smoke row
+PASS entry and all five generated node SSH aliases
+{
+  "profile": "neon-multi-node-aws",
+  "gates": [
+    "trusted TLS certificate, matching DNS name, encrypted PostgreSQL session",
+    "wrong password refused",
+    "passwordless connection refused",
+    "plaintext connection refused",
+    "application role cannot escalate to superuser",
+    "authenticated write/read with one deterministic smoke row",
+    "entry and all five generated node SSH aliases"
+  ],
+  "passed": 7,
+  "checked_at": "2026-09-10T16:03:11Z"
+}
+

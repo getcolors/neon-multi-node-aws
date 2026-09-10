@@ -1,5 +1,9 @@
 # Live verification: Neon Multi-Node AWS
 
+The native Red/Blue verification is recorded separately in
+[`evidence/red-blue/README.md`](evidence/red-blue/README.md). The report below
+preserves the original Green lifecycle and its corrections.
+
 Verified on 2026-09-10: live deployment, reconvergence, recovery, complete
 teardown and repeated deletion passed. Final independent audits report zero
 remaining deployment resources and zero remaining billable resources. Both

@@ -1,0 +1,37 @@
+{
+  "profile": "neon-multi-node-aws",
+  "checked_at": "2026-09-10T16:09:40Z",
+  "trusted_external_tls": true,
+  "acknowledged_witnesses": [
+    {
+      "id": "quorum-7bb0030ee4d14b2da26895ff1ead4d2d",
+      "value": "3306df527e274f20aa9da0272f7cb564",
+      "member": "safekeeper-0"
+    },
+    {
+      "id": "quorum-613fecd7071445b2961bc03241929fde",
+      "value": "8dd618cd9041494dafe730763844d8b1",
+      "member": "safekeeper-1"
+    },
+    {
+      "id": "quorum-dbc0e6e5c2a8400da46af7689c13a3a5",
+      "value": "005bef0bbc6a472aa0747ca66b838ae5",
+      "member": "safekeeper-2"
+    }
+  ],
+  "acknowledged_witnesses_verified": 3,
+  "members_covered": [
+    "safekeeper-0",
+    "safekeeper-1",
+    "safekeeper-2"
+  ],
+  "uncertain_write_observed": {
+    "present": true,
+    "values": [
+      "possibly-committed"
+    ],
+    "interpretation": "Observed after recovery; a timeout did not establish commit or rollback."
+  },
+  "s3_attachment_generation": 2,
+  "verified": true
+}

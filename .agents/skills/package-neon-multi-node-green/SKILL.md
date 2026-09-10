@@ -6,8 +6,10 @@ description: Deploy and operate self-hosted Neon Postgres 17 across separate com
 # Neon Multi-Node Package Skill
 
 Operate the five-machine topology in `getcolors/neon-multi-node`: compute-0,
-pageserver-0 (also storage broker), and safekeeper-0/1/2. Green is the provided
-runtime. The package pins Colors and colors-compute to immutable Git commits.
+pageserver-0 (also storage broker), and safekeeper-0/1/2. This skill supplies the
+Green runtime; sibling Red and Blue skills use the same desired state and state
+addresses. Run one lifecycle operation per profile at a time. The package pins
+Colors and colors-compute to immutable Git commits.
 
 Install into the deployment repository:
 

@@ -10,6 +10,7 @@ import yaml
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--continuity', action='store_true', help='Require the previously recorded witness unchanged')
+parser.add_argument('--witness-file', type=Path, help='Evidence path for this deployment lifecycle; defaults to evidence/continuity.json')
 args = parser.parse_args()
 root = Path(__file__).resolve().parent
 cfg = yaml.safe_load((root / 'colors.yml').read_text())
@@ -45,7 +46,7 @@ r=sql('ALTER ROLE '+cfg['neon-role']+' WITH SUPERUSER',expect=False)
 assert r.returncode != 0 and ('permission denied' in r.stderr or 'must be superuser' in r.stderr or 'Only roles with' in r.stderr), 'Application privilege escalation not specifically refused'
 passed('application role cannot escalate to superuser')
 
-witness_file=root/'evidence'/'continuity.json'
+witness_file=args.witness_file or root/'evidence'/'continuity.json'
 if args.continuity:
     witness=json.loads(witness_file.read_text())
     assert witness['profile'] == profile

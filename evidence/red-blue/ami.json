@@ -1,0 +1,9 @@
+[
+    {
+        "id": "ami-025d99823a4caad37",
+        "owner": "099720109477",
+        "name": "ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-20260904",
+        "state": "available",
+        "architecture": "x86_64"
+    }
+]

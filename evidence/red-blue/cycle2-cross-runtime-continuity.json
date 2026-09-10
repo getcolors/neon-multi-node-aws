@@ -1,0 +1,77 @@
+{
+  "profile": "neon-multi-node-aws",
+  "source_files": [
+    "red-blue/cycle2-services-blue.json",
+    "red-blue/cycle2-services-red.json",
+    "red-blue/cycle2-resources-red.json",
+    "red-blue/cycle2-resource-baseline.json"
+  ],
+  "instance_ids": [
+    "i-0220014ede323a591",
+    "i-044e67b87c437f2df",
+    "i-0a788af90fbad5661",
+    "i-0b5c3afff5ac7a3f1",
+    "i-0d24f9aa94a15a5be"
+  ],
+  "volume_ids": [
+    "vol-00a0b19aa44134164",
+    "vol-06d5106f19789112d",
+    "vol-072fc50e6d6c8236e",
+    "vol-0b5336f1b6fed9115",
+    "vol-0fd442fa6e8aed2ce"
+  ],
+  "container_ids": [
+    {
+      "alias": "neon-multi-node-aws-compute-0",
+      "name": "/neon-compute-1",
+      "id": "bf57018b975b",
+      "image": "ghcr.io/neondatabase/compute-node-v17:release-compute-9073@sha256:ed6a613231d7026b4df8b00563444b9f33745370a3b3f0a2183e723f460ba974",
+      "digest": "sha256:ed6a613231d7026b4df8b00563444b9f33745370a3b3f0a2183e723f460ba974",
+      "created": "2026-09-10T15:54:50.92961623Z"
+    },
+    {
+      "alias": "neon-multi-node-aws-pageserver-0",
+      "name": "/neon-broker-1",
+      "id": "0832f7de8034",
+      "image": "ghcr.io/neondatabase/neon:release-9129@sha256:166022a72bf9983eba96d061d794f4740edbd4c3301e66202c1180acce9a323c",
+      "digest": "sha256:166022a72bf9983eba96d061d794f4740edbd4c3301e66202c1180acce9a323c",
+      "created": "2026-09-10T15:53:21.748633599Z"
+    },
+    {
+      "alias": "neon-multi-node-aws-pageserver-0",
+      "name": "/neon-pageserver-1",
+      "id": "76bc47558fa5",
+      "image": "ghcr.io/neondatabase/neon:release-9129@sha256:166022a72bf9983eba96d061d794f4740edbd4c3301e66202c1180acce9a323c",
+      "digest": "sha256:166022a72bf9983eba96d061d794f4740edbd4c3301e66202c1180acce9a323c",
+      "created": "2026-09-10T15:53:21.743599109Z"
+    },
+    {
+      "alias": "neon-multi-node-aws-safekeeper-0",
+      "name": "/neon-safekeeper-1",
+      "id": "038a4862aedc",
+      "image": "ghcr.io/neondatabase/neon:release-9129@sha256:166022a72bf9983eba96d061d794f4740edbd4c3301e66202c1180acce9a323c",
+      "digest": "sha256:166022a72bf9983eba96d061d794f4740edbd4c3301e66202c1180acce9a323c",
+      "created": "2026-09-10T15:52:34.577031981Z"
+    },
+    {
+      "alias": "neon-multi-node-aws-safekeeper-1",
+      "name": "/neon-safekeeper-1",
+      "id": "78d9e75214cf",
+      "image": "ghcr.io/neondatabase/neon:release-9129@sha256:166022a72bf9983eba96d061d794f4740edbd4c3301e66202c1180acce9a323c",
+      "digest": "sha256:166022a72bf9983eba96d061d794f4740edbd4c3301e66202c1180acce9a323c",
+      "created": "2026-09-10T15:52:31.311736424Z"
+    },
+    {
+      "alias": "neon-multi-node-aws-safekeeper-2",
+      "name": "/neon-safekeeper-1",
+      "id": "4138ef2aa3b0",
+      "image": "ghcr.io/neondatabase/neon:release-9129@sha256:166022a72bf9983eba96d061d794f4740edbd4c3301e66202c1180acce9a323c",
+      "digest": "sha256:166022a72bf9983eba96d061d794f4740edbd4c3301e66202c1180acce9a323c",
+      "created": "2026-09-10T15:52:34.295802818Z"
+    }
+  ],
+  "same_five_instances": true,
+  "same_five_volumes": true,
+  "same_six_containers": true,
+  "verified": true
+}

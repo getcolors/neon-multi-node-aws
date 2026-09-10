@@ -8,6 +8,7 @@ from botocore.exceptions import ClientError
 PROFILE = 'neon-multi-node-aws'
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--expect-absent', action='store_true', help='Fail unless every recorded deployment resource is absent')
+parser.add_argument('--baseline', type=Path, help='Exact-resource baseline for this deployment lifecycle')
 args = parser.parse_args()
 REGION = 'us-east-1'
 ACCOUNT = '251213589273'
@@ -36,7 +37,7 @@ for operation, field, id_key in [('describe_vpcs', 'Vpcs', 'VpcId'), ('describe_
     inventory[field] = [{'id': r[id_key], 'name': name(r), **({'ingress': r['IpPermissions'], 'egress': r['IpPermissionsEgress']} if field == 'SecurityGroups' else {})} for r in resources]
 inventory['KeyPairs'] = [{'id': k['KeyPairId'], 'name': k['KeyName']} for k in compute.describe_key_pairs(Filters=[{'Name': 'key-name', 'Values': [PROFILE]}])['KeyPairs']]
 # Preserve exact resource IDs before deletion: root EBS volumes have no Name tag.
-baseline_path = Path(__file__).with_name('resource-baseline.json')
+baseline_path = args.baseline or Path(__file__).with_name('resource-baseline.json')
 if baseline_path.exists():
     baseline = json.loads(baseline_path.read_text())
     assert (baseline['profile'], baseline['region'], baseline['account']) == (PROFILE, REGION, ACCOUNT)

@@ -1,0 +1,37 @@
+>>> neon-multi-node/start (build)
+<<< neon-multi-node/start (49ms)
+>>> neon-multi-node/infrastructure (build)
+<<< neon-multi-node/infrastructure (47ms)
+>>> neon-multi-node/storage (build)
+<<< neon-multi-node/storage (1ms)
+>>> neon-multi-node/dns (build)
+<<< neon-multi-node/dns (0ms)
+>>> neon-multi-node/ssh-config (build)
+<<< neon-multi-node/ssh-config (1ms)
+>>> neon-multi-node/ansible (build)
+<<< neon-multi-node/ansible (2ms)
+>>> neon-multi-node/acceptance (build)
+<<< neon-multi-node/acceptance (0ms)
+   Updating https://github.com/getcolors/neon-multi-node.git (038e93d524552ef36fb0fff5f306352e68283bff)
+   Updating https://github.com/getcolors/colors-compute.git (09ec539e75dc21c4dafb019eb8f9da276e695f6f)
+    Updated https://github.com/getcolors/neon-multi-node.git (038e93d524552ef36fb0fff5f306352e68283bff)
+    Updated https://github.com/getcolors/colors-compute.git (09ec539e75dc21c4dafb019eb8f9da276e695f6f)
+   Updating https://github.com/getcolors/neon.git (9f8ccc18e218ea3b6ce293a470afd61b19e81639)
+   Updating https://github.com/getcolors/once.git (10e525ae7c37130ab4d532b91c8d2ead94557cc8)
+    Updated https://github.com/getcolors/neon.git (9f8ccc18e218ea3b6ce293a470afd61b19e81639)
+    Updated https://github.com/getcolors/once.git (10e525ae7c37130ab4d532b91c8d2ead94557cc8)
+   Updating https://github.com/getcolors/blue.git (e29a7fc5a7a2895eacb882fc65520c2cdbab96c9)
+Downloading pydantic-core (1.9MiB)
+   Building colors-compute-blue @ git+https://github.com/getcolors/colors-compute.git@09ec539e75dc21c4dafb019eb8f9da276e695f6f#subdirectory=blue
+   Building package-neon-blue @ git+https://github.com/getcolors/neon.git@9f8ccc18e218ea3b6ce293a470afd61b19e81639#subdirectory=blue
+   Building package-neon-multi-node-blue @ git+https://github.com/getcolors/neon-multi-node.git@038e93d524552ef36fb0fff5f306352e68283bff#subdirectory=blue
+   Building package-once-blue @ git+https://github.com/getcolors/once.git@10e525ae7c37130ab4d532b91c8d2ead94557cc8#subdirectory=blue
+ Downloaded pydantic-core
+      Built colors-compute-blue @ git+https://github.com/getcolors/colors-compute.git@09ec539e75dc21c4dafb019eb8f9da276e695f6f#subdirectory=blue
+      Built package-neon-multi-node-blue @ git+https://github.com/getcolors/neon-multi-node.git@038e93d524552ef36fb0fff5f306352e68283bff#subdirectory=blue
+      Built package-neon-blue @ git+https://github.com/getcolors/neon.git@9f8ccc18e218ea3b6ce293a470afd61b19e81639#subdirectory=blue
+      Built package-once-blue @ git+https://github.com/getcolors/once.git@10e525ae7c37130ab4d532b91c8d2ead94557cc8#subdirectory=blue
+    Updated https://github.com/getcolors/blue.git (e29a7fc5a7a2895eacb882fc65520c2cdbab96c9)
+   Building blue @ git+https://github.com/getcolors/blue.git@e29a7fc5a7a2895eacb882fc65520c2cdbab96c9
+      Built blue @ git+https://github.com/getcolors/blue.git@e29a7fc5a7a2895eacb882fc65520c2cdbab96c9
+Installed 11 packages in 4ms

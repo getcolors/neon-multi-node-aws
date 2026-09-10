@@ -1,0 +1,6 @@
+red: resolving dependencies (first run)
+red: could not resolve dependencies
+Resolving dependencies
+Resolved, downloaded and extracted [8]
+error: colors-compute-red@github:getcolors/colors-compute#09ec539e75dc21c4dafb019eb8f9da276e695f6f failed to resolve
+error: red@github:getcolors/red#7636bee6a7575485ebaf621f4b1834bdcea59738 failed to resolve

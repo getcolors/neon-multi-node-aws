@@ -1,0 +1,139 @@
+bun test v1.3.10 (30e609e0)
+
+test/advice.test.ts:
+(pass) filter-return advice stacks LIFO (most recently added outermost) [3.00ms]
+(pass) advice-remove by id [1.00ms]
+(pass) re-adding the same id replaces and moves to top [1.00ms]
+(pass) override replaces the base
+(pass) around controls the call [1.00ms]
+(pass) filter-args transforms input
+(pass) before and after run for side effects; OLDFUN's value flows out
+(pass) before runs newest-to-oldest, after runs oldest-to-newest [1.00ms]
+(pass) throwing advice fails the step through the contract [1.00ms]
+(pass) advice-add-all applies to every step [1.00ms]
+(pass) advice-add-all interleaves in strict add order with per-step [1.00ms]
+(pass) advice-remove-all removes the global entry [2.00ms]
+(pass) before-while > gates the inward call
+(pass) before-while > stack runs newest-to-oldest and stops on null
+(pass) before-until > short-circuits on non-null [2.00ms]
+(pass) after-while > runs oldest-to-newest and stops on null
+(pass) after-while and after-until use red/exit as truth > after-while does not run after a failing step result [1.00ms]
+(pass) after-while and after-until use red/exit as truth > after-until falls through to advice after a failing step result
+(pass) after-until supplies a result when the chain returns null > compose level: advice only fires when the inward call is null
+(pass) after-until supplies a result when the chain returns null > in a workflow: a before-while gate nils the step out and an outer after-until turns that into a real result [1.00ms]
+(pass) after-until stack runs oldest-to-newest
+(pass) depth overrides add order
+(pass) equal depth falls back to newest-outermost [1.00ms]
+(pass) depth applies across per-step and all-steps advice [1.00ms]
+(pass) invalid how and out-of-range depth are rejected at add time
+(pass) parent advice reaches an embedded step [2.00ms]
+(pass) parent override redefines an embedded step [1.00ms]
+(pass) inherited advice is outermost [1.00ms]
+(pass) same-id parent advice replaces the child's [1.00ms]
+(pass) depth overrides inheritance order [1.00ms]
+(pass) advice-add-all propagates into embeds [1.00ms]
+(pass) inheritance survives a scoping in-fn [1.00ms]
+(pass) inheritance is transitive through nested embeds [1.00ms]
+(pass) the inherited registry does not leak into results
+(pass) advice-plan shows the cross-workflow stack [1.00ms]
+(pass) advice-add-all workflow is untouched by later adds [1.00ms]
+
+test/cli.test.ts:
+(pass) event and state flow into the workflow [3.00ms]
+(pass) arbitrary events are allowed [1.00ms]
+(pass) slices via --start and --end [1.00ms]
+(pass) --dry-run stamps the key [2.00ms]
+(pass) usage errors exit 2
+(pass) COLORS_PAR overlays flat keys with type coercion
+(pass) no colour keeps a prefix of its own
+(pass) namespaced keys and YAML 1.2 semantics survive the load [1.00ms]
+
+test/zookeeper.test.ts:
+(pass) zookeeper end-to-end (real tofu) > fake cluster: create fans out, joins, is idempotent; delete tears down [1006.00ms]
+(pass) zookeeper end-to-end (real tofu) > two clusters from one workflow, composed and isolated [434.00ms]
+
+test/package-conventions.test.ts:
+(pass) package conventions are reusable [2.00ms]
+
+test/tofu.test.ts:
+(pass) tofu commands receive the configured environment [1.00ms]
+(pass) local backend is the default
+(pass) s3 backend advice writes attributes [1.00ms]
+(pass) backend config retains native JSON shapes [1.00ms]
+(pass) backend config can be a function of opts
+(pass) r2 backend and backend selection [1.00ms]
+(pass) HCL and constructs are deterministic and Green-byte-compatible [1.00ms]
+
+test/scaffold.test.ts:
+(pass) scaffold create and delete [1.00ms]
+(pass) custom delimiters pass Jinja2 through
+(pass) renderer supports escaping, safe, loops, sort, and missing values [1.00ms]
+(pass) renderer supports if and not-empty with custom delimiters [1.00ms]
+(pass) direct content is written exactly
+(pass) a template without content throws with context
+
+test/dry-run.test.ts:
+(pass) dry-run skips advised steps [1.00ms]
+(pass) without the flag, steps run normally [1.00ms]
+(pass) dry-run advice is removable per step
+
+test/workflow.test.ts:
+(pass) linear happy path [1.00ms]
+(pass) error halts without nextFn [1.00ms]
+(pass) exception becomes exit/err/trace
+(pass) StepError chooses the exit code [1.00ms]
+(pass) a step returning a non-map fails loudly
+(pass) a step mutating its frozen input fails through the contract
+(pass) end step is an inclusive slice boundary [1.00ms]
+(pass) wireFn can select an event-specific static graph
+(pass) wireFn uses stable run-opts, not branch opts [1.00ms]
+(pass) nextFn reroutes errors
+(pass) nextFn null terminates [1.00ms]
+(pass) static fork and join [1.00ms]
+(pass) dynamic fan-out and join
+(pass) branch failure skips the join and propagates the worst exit [1.00ms]
+(pass) workflows compose as steps
+(pass) sub-workflow failure halts the parent [1.00ms]
+(pass) step inFn/outFn scope the sub-workflow
+(pass) parallel branches actually run concurrently [52.00ms]
+
+test/ansible.test.ts:
+(pass) playbook follows the event
+(pass) recap parses per-host counters [1.00ms]
+(pass) inventory-ini renders groups, hosts, and vars
+(pass) inventory-ini without group vars
+(pass) inventory advice writes the file [1.00ms]
+(pass) ansible-with-spec scaffolds on create [1.00ms]
+(pass) ansible-with-spec cleans up on delete [1.00ms]
+(pass) extra vars, user, key, and host-key-checking shape the command [1.00ms]
+
+test/floci-zookeeper.test.ts:
+(skip) floci-zookeeper real e2e > create is idempotent and delete tears down
+
+test/progress.test.ts:
+(pass) progress prints step names [2.00ms]
+(pass) progress prints the event name
+(pass) progress is removable
+(pass) progress with forks
+(pass) red/step is set in opts [1.00ms]
+
+test/runtime.test.ts:
+(pass) normal process exit 0 is preserved [17.00ms]
+(pass) normal process exit 7 is preserved [15.00ms]
+(pass) signal is a positive workflow failure [13.00ms]
+(pass) real timeout reports positive failure [104.00ms]
+(pass) signal during destroy retains scaffolded files [45.00ms]
+(pass) timeout during destroy retains scaffolded files [127.00ms]
+
+test/gates.test.ts:
+(pass) valid opts pass through the gate untouched [4.00ms]
+(pass) invalid opts fail with exit 2 and a readable message; the step never runs [2.00ms]
+
+1 tests skipped:
+(skip) floci-zookeeper real e2e > create is idempotent and delete tears down
+
+ 102 pass
+ 1 skip
+ 0 fail
+ 278 expect() calls
+Ran 103 tests across 13 files. [2.01s]

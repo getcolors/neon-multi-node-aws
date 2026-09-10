@@ -1,0 +1,358 @@
+{
+  "kind": "manual evidence-grounded review; not a blind model benchmark",
+  "reviewer": "neon_topology subagent",
+  "reviewed_at": "2026-09-10T16:11:16.801289+00:00",
+  "skill_root": "/home/ubuntu/code/getcolors/skills/neon-multi-node",
+  "scope": "All11 current eval prompts, all33 assertions; read-only local review, no provider calls. Both native create/handoff/recovery cycles now verified; final Red teardown remains pending.",
+  "method": "Read complete draft SKILL and all referenced contracts/failures/acceptance/runtime/pins plus evals. Evaluate each assertion against documented source authority and observed deployment evidence, informed by direct runtime implementation and cold-resolver reproduction in this session. Proposed answers below are manual syntheses, not outputs from separate test model runs.",
+  "results": [
+    {
+      "id": 0,
+      "name": "ssl-off",
+      "manual_response": "The pinned compute.rs helper discards TLS without tls_experimental. Enabling it exposed a second parser defect, so repeated restarts are not the remedy. Use the verified native PostgreSQL settings and require external verify-full plus explicit plaintext refusal.",
+      "assertions": [
+        {
+          "assertion": "Identify pinned compute.rs::tls_config experimental feature gate",
+          "coverage": "supported",
+          "sources": [
+            "references/failure-catalogue.md#ssl-required-but-disabled",
+            "references/contracts.md#tls-source-authority"
+          ]
+        },
+        {
+          "assertion": "Explain enabling tls_experimental alone is not the final verified fix",
+          "coverage": "supported",
+          "sources": [
+            "references/failure-catalogue.md#ssl-required-but-disabled",
+            "references/contracts.md#tls-source-authority"
+          ]
+        },
+        {
+          "assertion": "Route to native PostgreSQL SSL settings and external verify-full plus plaintext rejection",
+          "coverage": "supported",
+          "sources": [
+            "references/failure-catalogue.md#ssl-required-but-disabled",
+            "references/contracts.md#tls-source-authority"
+          ]
+        }
+      ],
+      "unsupported_claims": []
+    },
+    {
+      "id": 1,
+      "name": "certificate-parser",
+      "manual_response": "The pinned helper classifies the certificate signature OID and supports the ECDSA/SHA256 plus SEC1 P256 path; the observed SHA384 certificate failed it. The verified native PostgreSQL settings bypass this helper without changing DNS or weakening verification.",
+      "assertions": [
+        {
+          "assertion": "Identify helper signature OID/key parser mismatch at pinned source",
+          "coverage": "supported",
+          "sources": [
+            "references/failure-catalogue.md#unknown-tls-key-type",
+            "references/contracts.md#tls-source-authority"
+          ]
+        },
+        {
+          "assertion": "Recommend verified native PostgreSQL SSL path rather than changing DNS",
+          "coverage": "supported",
+          "sources": [
+            "references/failure-catalogue.md#unknown-tls-key-type",
+            "references/contracts.md#tls-source-authority"
+          ]
+        },
+        {
+          "assertion": "Do not recommend blindly reissuing certificates or disabling verification",
+          "coverage": "supported",
+          "sources": [
+            "references/failure-catalogue.md#unknown-tls-key-type",
+            "references/contracts.md#tls-source-authority"
+          ]
+        }
+      ],
+      "unsupported_claims": []
+    },
+    {
+      "id": 2,
+      "name": "returning-tag",
+      "manual_response": "The final line can be INSERT 0 1 rather than RETURNING data. Add psql -q, verify a real read-only transaction probe, and rerun the full rehearsal. The row committed but the failed assertion prevented ledger recording; exclude that unledgered attempt from recovery proof.",
+      "assertions": [
+        {
+          "assertion": "Identify trailing INSERT 0 1 command tag and recommend psql -q",
+          "coverage": "supported",
+          "sources": [
+            "references/failure-catalogue.md#assertion-after-an-acknowledged-insert"
+          ]
+        },
+        {
+          "assertion": "Separate committed row from harness assertion failure",
+          "coverage": "supported",
+          "sources": [
+            "references/failure-catalogue.md#assertion-after-an-acknowledged-insert"
+          ]
+        },
+        {
+          "assertion": "Require a new complete rehearsal and exclude unledgered failed-attempt row",
+          "coverage": "supported",
+          "sources": [
+            "references/failure-catalogue.md#assertion-after-an-acknowledged-insert"
+          ]
+        }
+      ],
+      "unsupported_claims": []
+    },
+    {
+      "id": 3,
+      "name": "uncertain-commit",
+      "manual_response": "A client timeout does not establish rollback. The independently checked uncertain row was present after recovery. Reconcile a transaction identity before retrying; retry may duplicate work. Later reuse of the same uncertain row does not prove that later attempt committed.",
+      "assertions": [
+        {
+          "assertion": "State timeout did not prove rollback",
+          "coverage": "supported",
+          "sources": [
+            "references/failure-catalogue.md#timed-out-write-present-after-recovery",
+            "references/acceptance.md#recovery-bought-by-rehearsals2-and-3"
+          ]
+        },
+        {
+          "assertion": "Explain actual verified uncertain row was present after recovery",
+          "coverage": "supported",
+          "sources": [
+            "references/failure-catalogue.md#timed-out-write-present-after-recovery",
+            "references/acceptance.md#recovery-bought-by-rehearsals2-and-3"
+          ]
+        },
+        {
+          "assertion": "Recommend transaction identity reconciliation and avoid assuming retry cannot duplicate work",
+          "coverage": "supported",
+          "sources": [
+            "references/failure-catalogue.md#timed-out-write-present-after-recovery",
+            "references/acceptance.md#recovery-bought-by-rehearsals2-and-3"
+          ]
+        }
+      ],
+      "unsupported_claims": []
+    },
+    {
+      "id": 4,
+      "name": "scope-of-recovery",
+      "manual_response": "Three safekeepers provide quorum while compute and pageserver remain single failure points. The deployment is one AZ and pageserver recovery retained safekeeper WAL. It proves neither multi-zone/full HA nor zero full-storage-loss RPO.",
+      "assertions": [
+        {
+          "assertion": "Distinguish three-member WAL quorum from single compute/pageserver",
+          "coverage": "supported",
+          "sources": [
+            "references/acceptance.md#what-this-does-not-establish"
+          ]
+        },
+        {
+          "assertion": "State one-AZ and surviving-safekeeper limits",
+          "coverage": "supported",
+          "sources": [
+            "references/acceptance.md#what-this-does-not-establish"
+          ]
+        },
+        {
+          "assertion": "Reject unsupported zero full-storage-loss RPO or multi-zone claims",
+          "coverage": "supported",
+          "sources": [
+            "references/acceptance.md#what-this-does-not-establish"
+          ]
+        }
+      ],
+      "unsupported_claims": []
+    },
+    {
+      "id": 5,
+      "name": "constant-witness",
+      "manual_response": "Use unique identities and values for every fault/run, record only acknowledged writes, then independently read all exact pairs after recovery. An equal old value can hide loss of the latest outage write.",
+      "assertions": [
+        {
+          "assertion": "Require unique per-fault identity and value with acknowledged ledger",
+          "coverage": "supported",
+          "sources": [
+            "references/acceptance.md#recovery-bought-by-rehearsals2-and-3"
+          ]
+        },
+        {
+          "assertion": "Explain old equal value can mask latest-write loss",
+          "coverage": "supported",
+          "sources": [
+            "references/acceptance.md#recovery-bought-by-rehearsals2-and-3"
+          ]
+        },
+        {
+          "assertion": "Require independent exact pair readback after recovery",
+          "coverage": "supported",
+          "sources": [
+            "references/acceptance.md#recovery-bought-by-rehearsals2-and-3"
+          ]
+        }
+      ],
+      "unsupported_claims": []
+    },
+    {
+      "id": 6,
+      "name": "cleanup-cwd",
+      "manual_response": "Inspect the subprocess cwd as well as the executable. Green scaffold delete removed the cleanup targets and directory. Render under build before invoking Ansible, restore delete semantics, and require current-run all-five writer proof before bucket purge.",
+      "assertions": [
+        {
+          "assertion": "Check missing subprocess cwd rather than assume executable missing",
+          "coverage": "supported",
+          "sources": [
+            "references/failure-catalogue.md#ansible-exists-but-cleanup-reports-enoent",
+            "references/contracts.md#current-run-deletion-evidence"
+          ]
+        },
+        {
+          "assertion": "Explain Green scaffold delete removes targets",
+          "coverage": "supported",
+          "sources": [
+            "references/failure-catalogue.md#ansible-exists-but-cleanup-reports-enoent",
+            "references/contracts.md#current-run-deletion-evidence"
+          ]
+        },
+        {
+          "assertion": "Render cleanup artifacts under build then retain original delete semantics and current-run writer proof",
+          "coverage": "supported",
+          "sources": [
+            "references/failure-catalogue.md#ansible-exists-but-cleanup-reports-enoent",
+            "references/contracts.md#current-run-deletion-evidence"
+          ]
+        }
+      ],
+      "unsupported_claims": []
+    },
+    {
+      "id": 7,
+      "name": "retired-backend",
+      "manual_response": "NoSuchBucket after finalization differs from missing key; the generic migration error was misleading. Only managed delete routes to authenticated owner-checking finalizer. Never equate arbitrary errors with absence; access denied, foreign owner and live references must fail.",
+      "assertions": [
+        {
+          "assertion": "Distinguish NoSuchBucket after backend retirement from missing key or migration",
+          "coverage": "supported",
+          "sources": [
+            "references/failure-catalogue.md#repeat-delete-reports-migration-after-complete-cleanup"
+          ]
+        },
+        {
+          "assertion": "Route managed-delete verification through authenticated owner-checking finalizer",
+          "coverage": "supported",
+          "sources": [
+            "references/failure-catalogue.md#repeat-delete-reports-migration-after-complete-cleanup"
+          ]
+        },
+        {
+          "assertion": "Reject blanket success on errors and retain denial foreign-owner live-reference failures",
+          "coverage": "supported",
+          "sources": [
+            "references/failure-catalogue.md#repeat-delete-reports-migration-after-complete-cleanup"
+          ]
+        }
+      ],
+      "unsupported_claims": []
+    },
+    {
+      "id": 8,
+      "name": "runtime-handoff",
+      "manual_response": "Compare exact five instance IDs, five root-volume IDs and six container IDs, then read the persistent random witness through external trusted hostname TLS. Serialize lifecycle operations. Handoff alone is separate from recovery and deletion proof.",
+      "assertions": [
+        {
+          "assertion": "Require matching five instance and volume identities and six container identities",
+          "coverage": "supported",
+          "sources": [
+            "references/runtimes.md#live-runtime-handoff"
+          ]
+        },
+        {
+          "assertion": "Require exact persistent SQL witness readback through trusted external TLS",
+          "coverage": "supported",
+          "sources": [
+            "references/runtimes.md#live-runtime-handoff"
+          ]
+        },
+        {
+          "assertion": "Keep one lifecycle operation per profile and distinguish create handoff from recovery or deletion proof",
+          "coverage": "supported",
+          "sources": [
+            "references/runtimes.md#live-runtime-handoff"
+          ]
+        }
+      ],
+      "unsupported_claims": []
+    },
+    {
+      "id": 9,
+      "name": "negative-exit",
+      "manual_response": "Negative subprocess status bypassed a positive-only failure contract. Normalize within SDK execution before Terraform cleanup: timeout124, SIGTERM143. Pin direct and transitive overrides to the fixed SDK. Real local fake-Terraform regressions prove interrupted process handling, not live AWS interrupted teardown.",
+      "assertions": [
+        {
+          "assertion": "Identify negative subprocess status versus positive-only failure contract",
+          "coverage": "supported",
+          "sources": [
+            "references/runtimes.md#negative-subprocess-status-bypasses-failure"
+          ]
+        },
+        {
+          "assertion": "Normalize at the SDK execution boundary before Terraform cleanup, with timeout124 and SIGTERM143",
+          "coverage": "supported",
+          "sources": [
+            "references/runtimes.md#negative-subprocess-status-bypasses-failure"
+          ]
+        },
+        {
+          "assertion": "Pin direct and transitive SDK overrides and distinguish offline fake-Terraform tests from live cloud interruption",
+          "coverage": "supported",
+          "sources": [
+            "references/runtimes.md#negative-subprocess-status-bypasses-failure"
+          ]
+        }
+      ],
+      "unsupported_claims": []
+    },
+    {
+      "id": 10,
+      "name": "bun-cold-cache",
+      "manual_response": "Bun1.3.10 intermittently failed pinned Git resolution even without concurrent installs. The exact internal cause is not established. Use full-SHA codeload commit archives plus consistent overrides, and run copied public payloads in truly empty caches without local overrides; a warm checkout or one retry is insufficient.",
+      "assertions": [
+        {
+          "assertion": "Identify observed intermittent pinned Git dependency resolution failure on Bun1.3.10 without asserting an unproved internal root cause",
+          "coverage": "supported",
+          "sources": [
+            "references/runtimes.md#bun-cold-git-resolution"
+          ]
+        },
+        {
+          "assertion": "Use pinned launcher immutable commit archives and consistent overrides",
+          "coverage": "supported",
+          "sources": [
+            "references/runtimes.md#bun-cold-git-resolution"
+          ]
+        },
+        {
+          "assertion": "Require genuinely fresh-cache published payload tests without local library overrides",
+          "coverage": "supported",
+          "sources": [
+            "references/runtimes.md#bun-cold-git-resolution"
+          ]
+        }
+      ],
+      "unsupported_claims": []
+    }
+  ],
+  "summary": {
+    "prompts_reviewed": 11,
+    "assertions_supported": 33,
+    "assertions_unsupported": 0,
+    "blind_benchmark_executed": false
+  },
+  "qualifications": [
+    "No claim that every documented historical upstream source line was refetched in this review; source links and exact commits are documented and were inspected during implementation.",
+    "Bun Git internal root cause remains unknown. Duplicate direct/transitive graph describes observed conditions only; deterministic archive workaround is experimentally supported by eight cold-cache passes.",
+    "Recovery and zero-resource claims remain scoped to completed cycles; do not infer timer-driven TLS renewal, multi-AZ survival or interrupted live cloud teardown."
+  ],
+  "expanded_evidence_review": {
+    "references": "Read expanded references/runtimes.md for separate lifecycle proofs.",
+    "cycle2_recovery": "Read cycle2-recovery.json:3exact unique acknowledged witnesses, member0/1/2, generation2, uncertain row present.",
+    "cycle2_no_quorum": "Read cycle2-no-quorum.json:45.132080 seconds, no acknowledgment gate passed.",
+    "finding": "All33 assertions remain supported; separated database witness counts and pending Red teardown claims are accurate."
+  }
+}

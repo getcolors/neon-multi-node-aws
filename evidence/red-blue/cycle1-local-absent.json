@@ -1,0 +1,18 @@
+{
+  "profile": "neon-multi-node-aws",
+  "owned_key_paths_absent": [
+    "/home/ubuntu/.ssh/neon-multi-node-aws",
+    "/home/ubuntu/.ssh/neon-multi-node-aws.pub",
+    "/home/ubuntu/.ssh/neon-multi-node-aws.known_hosts"
+  ],
+  "aliases_absent": [
+    "neon-multi-node-aws",
+    "neon-multi-node-aws-compute-0",
+    "neon-multi-node-aws-pageserver-0",
+    "neon-multi-node-aws-safekeeper-0",
+    "neon-multi-node-aws-safekeeper-1",
+    "neon-multi-node-aws-safekeeper-2"
+  ],
+  "managed_block_absent": true,
+  "verified": true
+}

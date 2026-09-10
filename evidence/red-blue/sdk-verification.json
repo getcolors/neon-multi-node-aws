@@ -1,0 +1,70 @@
+{
+  "verification_kind": "offline subprocess and SDK regression verification; no AWS resources or live deployment involved",
+  "date": "2026-09-10",
+  "problem": "SDK workflow and Terraform helpers reserve positive exit statuses for failure, but runtime timeout or signal statuses could be negative.",
+  "before_fix": {
+    "blue_sdk_commit": "290f313ead5ca162875c33a049c880da017eae09",
+    "blue_reproductions": [
+      {
+        "method": "Stub runtime.exec with ExecResult(-1, empty stdout, timeout diagnostic); call native package acceptance_step then blue.workflow.failed",
+        "observed": {
+          "exit": -1,
+          "workflow_failed": false
+        }
+      },
+      {
+        "method": "Stub runtime.exec with init exit0 and destroy exit-15; call blue.tofu.tofu_step for delete",
+        "observed": {
+          "commands": [
+            "init",
+            "destroy"
+          ],
+          "reported_exit": 0
+        }
+      }
+    ],
+    "red_diagnosis": "Source inspection of prior runtime.ts timeout branch returning -1 and tofu/workflow checks >0. No pre-fix live Terraform interruption was performed.",
+    "scope_note": "The before-fix Blue observations used stubbed command results, not actual infrastructure interruption; the post-fix tests below execute real local child processes."
+  },
+  "after_fix": {
+    "blue": {
+      "commit": "e29a7fc5a7a2895eacb882fc65520c2cdbab96c9",
+      "normal_statuses": [
+        0,
+        7
+      ],
+      "SIGTERM_exit": 143,
+      "timeout_exit": 124,
+      "destroy_signal_result": "positive failure and scaffolded main.tf retained",
+      "test_source": "https://github.com/getcolors/blue/blob/e29a7fc5a7a2895eacb882fc65520c2cdbab96c9/tests/test_runtime.py",
+      "suite": {
+        "passed": 102,
+        "skipped": 1,
+        "skipped_reason": "optional floci integration disabled"
+      },
+      "log": "/tmp/neon-rb-blue-sdk-tests.txt"
+    },
+    "red": {
+      "commit": "7636bee6a7575485ebaf621f4b1834bdcea59738",
+      "normal_statuses": [
+        0,
+        7
+      ],
+      "SIGTERM_exit": 143,
+      "timeout_exit": 124,
+      "destroy_signal_and_timeout_result": "both positive failures and scaffolded main.tf retained",
+      "test_source": "https://github.com/getcolors/red/blob/7636bee6a7575485ebaf621f4b1834bdcea59738/test/runtime.test.ts",
+      "suite": {
+        "passed": 102,
+        "skipped": 1,
+        "assertions": 278,
+        "skipped_reason": "optional floci integration disabled"
+      },
+      "typecheck": "passed",
+      "log": "/tmp/neon-rb-red-sdk-tests.txt"
+    }
+  },
+  "implementation": "Normalize at native runtime execution boundary: timeout124, negative process code to128+signal; leave zero and positive process codes unchanged. Workflow failed>0 semantics unchanged.",
+  "consumer_requirement": "Pin native SDK and dependency overrides to these commits so colors-compute and package imports resolve the same runtime instance.",
+  "limitations": "No claim of live AWS failure injection or production interruption. Real fake-tofu child executables exercise SDK render/run/remove behavior with local files only."
+}
