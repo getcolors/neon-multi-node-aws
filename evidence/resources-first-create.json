@@ -1,0 +1,486 @@
+{
+  "profile": "neon-multi-node-aws",
+  "region": "us-east-1",
+  "instances": [
+    {
+      "id": "i-08981112bba31bbe1",
+      "name": "neon-multi-node-aws-safekeeper-2",
+      "state": "running",
+      "public_ip": "44.222.228.239",
+      "private_ip": "10.75.1.164",
+      "root_device": "/dev/sda1",
+      "ebs_volumes": [
+        {
+          "id": "vol-0d48bb7204a290091",
+          "device": "/dev/sda1",
+          "root": true,
+          "delete_on_termination": true
+        }
+      ]
+    },
+    {
+      "id": "i-0034a818b9b9c6c4c",
+      "name": "neon-multi-node-aws-compute-0",
+      "state": "running",
+      "public_ip": "54.152.174.87",
+      "private_ip": "10.75.1.54",
+      "root_device": "/dev/sda1",
+      "ebs_volumes": [
+        {
+          "id": "vol-0f3ff82c3475ad099",
+          "device": "/dev/sda1",
+          "root": true,
+          "delete_on_termination": true
+        }
+      ]
+    },
+    {
+      "id": "i-0b018a033e404e873",
+      "name": "neon-multi-node-aws-pageserver-0",
+      "state": "running",
+      "public_ip": "18.209.69.222",
+      "private_ip": "10.75.1.4",
+      "root_device": "/dev/sda1",
+      "ebs_volumes": [
+        {
+          "id": "vol-0b3bf0d1a3a1d9149",
+          "device": "/dev/sda1",
+          "root": true,
+          "delete_on_termination": true
+        }
+      ]
+    },
+    {
+      "id": "i-0948b8fc39b435663",
+      "name": "neon-multi-node-aws-safekeeper-0",
+      "state": "running",
+      "public_ip": "54.226.43.101",
+      "private_ip": "10.75.1.132",
+      "root_device": "/dev/sda1",
+      "ebs_volumes": [
+        {
+          "id": "vol-0080b0f2bdbd45c0b",
+          "device": "/dev/sda1",
+          "root": true,
+          "delete_on_termination": true
+        }
+      ]
+    },
+    {
+      "id": "i-035361874f80d4467",
+      "name": "neon-multi-node-aws-safekeeper-1",
+      "state": "running",
+      "public_ip": "54.160.169.176",
+      "private_ip": "10.75.1.202",
+      "root_device": "/dev/sda1",
+      "ebs_volumes": [
+        {
+          "id": "vol-050c31d57e83082fd",
+          "device": "/dev/sda1",
+          "root": true,
+          "delete_on_termination": true
+        }
+      ]
+    }
+  ],
+  "Vpcs": [
+    {
+      "id": "vpc-037d44afa76cfd9d5",
+      "name": "neon-multi-node-aws"
+    }
+  ],
+  "Subnets": [
+    {
+      "id": "subnet-0f298f8f05939cc2c",
+      "name": "neon-multi-node-aws"
+    }
+  ],
+  "RouteTables": [
+    {
+      "id": "rtb-0099eedf3b5214626",
+      "name": "neon-multi-node-aws"
+    }
+  ],
+  "InternetGateways": [
+    {
+      "id": "igw-0f2bbf9caade8b764",
+      "name": "neon-multi-node-aws"
+    }
+  ],
+  "SecurityGroups": [
+    {
+      "id": "sg-033304fe3e49f758a",
+      "name": "neon-multi-node-aws-compute-firewall",
+      "ingress": [
+        {
+          "FromPort": 80,
+          "IpProtocol": "tcp",
+          "IpRanges": [
+            {
+              "CidrIp": "0.0.0.0/0"
+            }
+          ],
+          "Ipv6Ranges": [],
+          "PrefixListIds": [],
+          "ToPort": 80,
+          "UserIdGroupPairs": []
+        },
+        {
+          "FromPort": 22,
+          "IpProtocol": "tcp",
+          "IpRanges": [
+            {
+              "CidrIp": "89.168.97.254/32"
+            }
+          ],
+          "Ipv6Ranges": [],
+          "PrefixListIds": [],
+          "ToPort": 22,
+          "UserIdGroupPairs": []
+        },
+        {
+          "FromPort": 55433,
+          "IpProtocol": "tcp",
+          "IpRanges": [
+            {
+              "CidrIp": "89.168.97.254/32"
+            }
+          ],
+          "Ipv6Ranges": [],
+          "PrefixListIds": [],
+          "ToPort": 55433,
+          "UserIdGroupPairs": []
+        }
+      ],
+      "egress": [
+        {
+          "IpProtocol": "-1",
+          "IpRanges": [
+            {
+              "CidrIp": "0.0.0.0/0"
+            }
+          ],
+          "Ipv6Ranges": [],
+          "PrefixListIds": [],
+          "UserIdGroupPairs": []
+        }
+      ]
+    },
+    {
+      "id": "sg-0a0af45c610649536",
+      "name": "neon-multi-node-aws-pageserver-firewall",
+      "ingress": [
+        {
+          "FromPort": 22,
+          "IpProtocol": "tcp",
+          "IpRanges": [
+            {
+              "CidrIp": "89.168.97.254/32"
+            }
+          ],
+          "Ipv6Ranges": [],
+          "PrefixListIds": [],
+          "ToPort": 22,
+          "UserIdGroupPairs": []
+        },
+        {
+          "FromPort": 9898,
+          "IpProtocol": "tcp",
+          "IpRanges": [
+            {
+              "CidrIp": "10.75.1.54/32"
+            }
+          ],
+          "Ipv6Ranges": [],
+          "PrefixListIds": [],
+          "ToPort": 9898,
+          "UserIdGroupPairs": []
+        },
+        {
+          "FromPort": 6400,
+          "IpProtocol": "tcp",
+          "IpRanges": [
+            {
+              "CidrIp": "10.75.1.54/32"
+            }
+          ],
+          "Ipv6Ranges": [],
+          "PrefixListIds": [],
+          "ToPort": 6400,
+          "UserIdGroupPairs": []
+        },
+        {
+          "FromPort": 50051,
+          "IpProtocol": "tcp",
+          "IpRanges": [
+            {
+              "CidrIp": "10.75.1.202/32"
+            },
+            {
+              "CidrIp": "10.75.1.132/32"
+            },
+            {
+              "CidrIp": "10.75.1.4/32"
+            },
+            {
+              "CidrIp": "10.75.1.164/32"
+            }
+          ],
+          "Ipv6Ranges": [],
+          "PrefixListIds": [],
+          "ToPort": 50051,
+          "UserIdGroupPairs": []
+        }
+      ],
+      "egress": [
+        {
+          "IpProtocol": "-1",
+          "IpRanges": [
+            {
+              "CidrIp": "0.0.0.0/0"
+            }
+          ],
+          "Ipv6Ranges": [],
+          "PrefixListIds": [],
+          "UserIdGroupPairs": []
+        }
+      ]
+    },
+    {
+      "id": "sg-0f75dc182e8e7af5a",
+      "name": "neon-multi-node-aws-safekeeper-firewall",
+      "ingress": [
+        {
+          "FromPort": 22,
+          "IpProtocol": "tcp",
+          "IpRanges": [
+            {
+              "CidrIp": "89.168.97.254/32"
+            }
+          ],
+          "Ipv6Ranges": [],
+          "PrefixListIds": [],
+          "ToPort": 22,
+          "UserIdGroupPairs": []
+        },
+        {
+          "FromPort": 7676,
+          "IpProtocol": "tcp",
+          "IpRanges": [
+            {
+              "CidrIp": "10.75.1.54/32"
+            }
+          ],
+          "Ipv6Ranges": [],
+          "PrefixListIds": [],
+          "ToPort": 7676,
+          "UserIdGroupPairs": []
+        },
+        {
+          "FromPort": 5454,
+          "IpProtocol": "tcp",
+          "IpRanges": [
+            {
+              "CidrIp": "10.75.1.164/32"
+            },
+            {
+              "CidrIp": "10.75.1.4/32"
+            },
+            {
+              "CidrIp": "10.75.1.202/32"
+            },
+            {
+              "CidrIp": "10.75.1.132/32"
+            },
+            {
+              "CidrIp": "10.75.1.54/32"
+            }
+          ],
+          "Ipv6Ranges": [],
+          "PrefixListIds": [],
+          "ToPort": 5454,
+          "UserIdGroupPairs": []
+        }
+      ],
+      "egress": [
+        {
+          "IpProtocol": "-1",
+          "IpRanges": [
+            {
+              "CidrIp": "0.0.0.0/0"
+            }
+          ],
+          "Ipv6Ranges": [],
+          "PrefixListIds": [],
+          "UserIdGroupPairs": []
+        }
+      ]
+    }
+  ],
+  "KeyPairs": [
+    {
+      "id": "key-092d029f8d4736613",
+      "name": "neon-multi-node-aws"
+    }
+  ],
+  "recorded_ebs_volumes": [
+    {
+      "id": "vol-0d48bb7204a290091",
+      "device": "/dev/sda1",
+      "root": true,
+      "delete_on_termination": true
+    },
+    {
+      "id": "vol-0f3ff82c3475ad099",
+      "device": "/dev/sda1",
+      "root": true,
+      "delete_on_termination": true
+    },
+    {
+      "id": "vol-0b3bf0d1a3a1d9149",
+      "device": "/dev/sda1",
+      "root": true,
+      "delete_on_termination": true
+    },
+    {
+      "id": "vol-0080b0f2bdbd45c0b",
+      "device": "/dev/sda1",
+      "root": true,
+      "delete_on_termination": true
+    },
+    {
+      "id": "vol-050c31d57e83082fd",
+      "device": "/dev/sda1",
+      "root": true,
+      "delete_on_termination": true
+    }
+  ],
+  "Volumes": [
+    {
+      "id": "vol-0d48bb7204a290091",
+      "state": "in-use",
+      "size_gib": 40,
+      "encrypted": true
+    },
+    {
+      "id": "vol-0f3ff82c3475ad099",
+      "state": "in-use",
+      "size_gib": 40,
+      "encrypted": true
+    },
+    {
+      "id": "vol-0b3bf0d1a3a1d9149",
+      "state": "in-use",
+      "size_gib": 40,
+      "encrypted": true
+    },
+    {
+      "id": "vol-050c31d57e83082fd",
+      "state": "in-use",
+      "size_gib": 40,
+      "encrypted": true
+    },
+    {
+      "id": "vol-0080b0f2bdbd45c0b",
+      "state": "in-use",
+      "size_gib": 40,
+      "encrypted": true
+    }
+  ],
+  "VpcDependencies": {
+    "Vpcs": [
+      {
+        "id": "vpc-037d44afa76cfd9d5",
+        "name": "neon-multi-node-aws"
+      }
+    ],
+    "Subnets": [
+      {
+        "id": "subnet-0f298f8f05939cc2c",
+        "name": "neon-multi-node-aws"
+      }
+    ],
+    "RouteTables": [
+      {
+        "id": "rtb-0099eedf3b5214626",
+        "name": "neon-multi-node-aws"
+      },
+      {
+        "id": "rtb-00ed95aa1d4a4e18a",
+        "name": null
+      }
+    ],
+    "InternetGateways": [
+      {
+        "id": "igw-0f2bbf9caade8b764",
+        "name": "neon-multi-node-aws"
+      }
+    ],
+    "SecurityGroups": [
+      {
+        "id": "sg-033304fe3e49f758a",
+        "name": "neon-multi-node-aws-compute-firewall"
+      },
+      {
+        "id": "sg-0a0af45c610649536",
+        "name": "neon-multi-node-aws-pageserver-firewall"
+      },
+      {
+        "id": "sg-0f75dc182e8e7af5a",
+        "name": "neon-multi-node-aws-safekeeper-firewall"
+      },
+      {
+        "id": "sg-0fa810ef502f1a93b",
+        "name": null
+      }
+    ],
+    "NetworkInterfaces": [
+      {
+        "id": "eni-02d4d9a15649078ac",
+        "name": null
+      },
+      {
+        "id": "eni-09d016cf4a9d7dd67",
+        "name": null
+      },
+      {
+        "id": "eni-0a80ba02b9977e848",
+        "name": null
+      },
+      {
+        "id": "eni-0d7d58ddbf041650a",
+        "name": null
+      },
+      {
+        "id": "eni-0038946c66795e211",
+        "name": null
+      }
+    ],
+    "NetworkAcls": [
+      {
+        "id": "acl-0277549093434d5a3",
+        "name": null
+      }
+    ]
+  },
+  "buckets": [
+    {
+      "name": "neon-multi-node-aws-state-251213589273-us-east-1",
+      "status": "present",
+      "ownership_tags": {
+        "colors:purpose": "managed-backend",
+        "colors:owner": "251213589273",
+        "colors:profile": "neon-multi-node-aws"
+      }
+    },
+    {
+      "name": "neon-multi-node-aws-neon-251213589273-us-east-1",
+      "status": "absent",
+      "code": "404"
+    }
+  ],
+  "iam_users": [],
+  "remaining_resource_count": 27,
+  "all_recorded_volumes_absent": false,
+  "remaining_billable_resource_count": 11
+}

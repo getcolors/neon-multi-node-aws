@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "package-neon-multi-node-green": {
+      "source": "getcolors/neon-multi-node",
+      "sourceType": "github",
+      "skillPath": "skills/package-neon-multi-node-green/SKILL.md",
+      "computedHash": "695939ae1194823ba9b69ed3ed677b332e420cc22d649f1270eddab91ac6337e"
+    }
+  }
+}

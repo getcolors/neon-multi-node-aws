@@ -1,0 +1,2 @@
+WARNING: password file "/dev/null" is not a plain file
+psql: error: connection to server at "neon-multi-node-aws.bigconfig.online" (54.152.174.87), port 55433 failed: server does not support SSL, but SSL was required
