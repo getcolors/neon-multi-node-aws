@@ -1,0 +1,9 @@
+>>> :neon-multi-node/start (describe)
+<<< :neon-multi-node/start (50609ms)
+>>> :neon-multi-node/describe (describe)
+PASS healthy compute-0
+PASS healthy pageserver-0
+PASS healthy safekeeper-0
+PASS healthy safekeeper-1
+PASS healthy safekeeper-2
+<<< :neon-multi-node/describe (9891ms)

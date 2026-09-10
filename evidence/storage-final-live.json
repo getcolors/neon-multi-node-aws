@@ -1,0 +1,150 @@
+{
+  "profile": "neon-multi-node-aws",
+  "buckets": [
+    {
+      "name": "neon-multi-node-aws-state-251213589273-us-east-1",
+      "public_access_blocked": true,
+      "encrypted": true,
+      "ownership_tags": {
+        "colors:purpose": "managed-backend",
+        "colors:owner": "251213589273",
+        "colors:profile": "neon-multi-node-aws"
+      }
+    },
+    {
+      "name": "neon-multi-node-aws-neon-251213589273-us-east-1",
+      "public_access_blocked": true,
+      "encrypted": true,
+      "ownership_tags": {
+        "colors:owner": "neon-multi-node-storage",
+        "colors:profile": "neon-multi-node-aws"
+      }
+    }
+  ],
+  "application_objects": [
+    {
+      "key": "neon-multi-node-aws/data/.colors-generation",
+      "size": 1
+    },
+    {
+      "key": "neon-multi-node-aws/data/.colors-init",
+      "size": 19
+    },
+    {
+      "key": "neon-multi-node-aws/data/.colors-ready",
+      "size": 19
+    },
+    {
+      "key": "neon-multi-node-aws/data/pageserver/tenants/9529d95d734cf1a3c329f69c0fe2f1d0/tenant-manifest-00000001.json",
+      "size": 57
+    },
+    {
+      "key": "neon-multi-node-aws/data/pageserver/tenants/9529d95d734cf1a3c329f69c0fe2f1d0/timelines/11ddd8a0dadbfd8df065ca17967a47eb/000000000000000000000000000000000000-FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF__00000000014E8F20-00000000014E8F99-00000001",
+      "size": 23240704
+    },
+    {
+      "key": "neon-multi-node-aws/data/pageserver/tenants/9529d95d734cf1a3c329f69c0fe2f1d0/timelines/11ddd8a0dadbfd8df065ca17967a47eb/000000000000000000000000000000000000-FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF__00000000014E8F99-000000000211DF59-00000001",
+      "size": 16384000
+    },
+    {
+      "key": "neon-multi-node-aws/data/pageserver/tenants/9529d95d734cf1a3c329f69c0fe2f1d0/timelines/11ddd8a0dadbfd8df065ca17967a47eb/000000000000000000000000000000000000-FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF__000000000211DF59-000000000302BC71-00000001",
+      "size": 647168
+    },
+    {
+      "key": "neon-multi-node-aws/data/pageserver/tenants/9529d95d734cf1a3c329f69c0fe2f1d0/timelines/11ddd8a0dadbfd8df065ca17967a47eb/000000000000000000000000000000000000-FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF__000000000302BC71-0000000008000001-00000001",
+      "size": 147456
+    },
+    {
+      "key": "neon-multi-node-aws/data/pageserver/tenants/9529d95d734cf1a3c329f69c0fe2f1d0/timelines/11ddd8a0dadbfd8df065ca17967a47eb/000000000000000000000000000000000000-FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF__0000000008000001-000000000E000001-00000002",
+      "size": 335872
+    },
+    {
+      "key": "neon-multi-node-aws/data/pageserver/tenants/9529d95d734cf1a3c329f69c0fe2f1d0/timelines/11ddd8a0dadbfd8df065ca17967a47eb/index_part.json-00000001",
+      "size": 877
+    },
+    {
+      "key": "neon-multi-node-aws/data/pageserver/tenants/9529d95d734cf1a3c329f69c0fe2f1d0/timelines/11ddd8a0dadbfd8df065ca17967a47eb/index_part.json-00000002",
+      "size": 1024
+    },
+    {
+      "key": "neon-multi-node-aws/data/pageserver/tenants/9529d95d734cf1a3c329f69c0fe2f1d0/timelines/11ddd8a0dadbfd8df065ca17967a47eb/initdb.tar.zst",
+      "size": 1553961
+    },
+    {
+      "key": "neon-multi-node-aws/data/safekeeper/9529d95d734cf1a3c329f69c0fe2f1d0/11ddd8a0dadbfd8df065ca17967a47eb/000000010000000000000001",
+      "size": 16777216
+    },
+    {
+      "key": "neon-multi-node-aws/data/safekeeper/9529d95d734cf1a3c329f69c0fe2f1d0/11ddd8a0dadbfd8df065ca17967a47eb/000000010000000000000002",
+      "size": 16777216
+    },
+    {
+      "key": "neon-multi-node-aws/data/safekeeper/9529d95d734cf1a3c329f69c0fe2f1d0/11ddd8a0dadbfd8df065ca17967a47eb/000000010000000000000002_2_000000000211DF58_000000000211DF58_sk1.partial",
+      "size": 1171288
+    },
+    {
+      "key": "neon-multi-node-aws/data/safekeeper/9529d95d734cf1a3c329f69c0fe2f1d0/11ddd8a0dadbfd8df065ca17967a47eb/000000010000000000000002_2_000000000211DF58_000000000211DF58_sk2.partial",
+      "size": 1171288
+    },
+    {
+      "key": "neon-multi-node-aws/data/safekeeper/9529d95d734cf1a3c329f69c0fe2f1d0/11ddd8a0dadbfd8df065ca17967a47eb/000000010000000000000002_2_000000000211DF58_000000000211DF58_sk3.partial",
+      "size": 1171288
+    },
+    {
+      "key": "neon-multi-node-aws/data/safekeeper/9529d95d734cf1a3c329f69c0fe2f1d0/11ddd8a0dadbfd8df065ca17967a47eb/000000010000000000000003",
+      "size": 16777216
+    },
+    {
+      "key": "neon-multi-node-aws/data/safekeeper/9529d95d734cf1a3c329f69c0fe2f1d0/11ddd8a0dadbfd8df065ca17967a47eb/000000010000000000000004",
+      "size": 16777216
+    },
+    {
+      "key": "neon-multi-node-aws/data/safekeeper/9529d95d734cf1a3c329f69c0fe2f1d0/11ddd8a0dadbfd8df065ca17967a47eb/000000010000000000000005",
+      "size": 16777216
+    },
+    {
+      "key": "neon-multi-node-aws/data/safekeeper/9529d95d734cf1a3c329f69c0fe2f1d0/11ddd8a0dadbfd8df065ca17967a47eb/000000010000000000000006",
+      "size": 16777216
+    },
+    {
+      "key": "neon-multi-node-aws/data/safekeeper/9529d95d734cf1a3c329f69c0fe2f1d0/11ddd8a0dadbfd8df065ca17967a47eb/000000010000000000000007",
+      "size": 16777216
+    },
+    {
+      "key": "neon-multi-node-aws/data/safekeeper/9529d95d734cf1a3c329f69c0fe2f1d0/11ddd8a0dadbfd8df065ca17967a47eb/000000010000000000000008",
+      "size": 16777216
+    },
+    {
+      "key": "neon-multi-node-aws/data/safekeeper/9529d95d734cf1a3c329f69c0fe2f1d0/11ddd8a0dadbfd8df065ca17967a47eb/000000010000000000000009",
+      "size": 16777216
+    },
+    {
+      "key": "neon-multi-node-aws/data/safekeeper/9529d95d734cf1a3c329f69c0fe2f1d0/11ddd8a0dadbfd8df065ca17967a47eb/00000001000000000000000A",
+      "size": 16777216
+    },
+    {
+      "key": "neon-multi-node-aws/data/safekeeper/9529d95d734cf1a3c329f69c0fe2f1d0/11ddd8a0dadbfd8df065ca17967a47eb/00000001000000000000000B",
+      "size": 16777216
+    },
+    {
+      "key": "neon-multi-node-aws/data/safekeeper/9529d95d734cf1a3c329f69c0fe2f1d0/11ddd8a0dadbfd8df065ca17967a47eb/00000001000000000000000C",
+      "size": 16777216
+    },
+    {
+      "key": "neon-multi-node-aws/data/safekeeper/9529d95d734cf1a3c329f69c0fe2f1d0/11ddd8a0dadbfd8df065ca17967a47eb/00000001000000000000000D",
+      "size": 16777216
+    },
+    {
+      "key": "neon-multi-node-aws/data/safekeeper/9529d95d734cf1a3c329f69c0fe2f1d0/11ddd8a0dadbfd8df065ca17967a47eb/00000001000000000000000E",
+      "size": 16777216
+    },
+    {
+      "key": "neon-multi-node-aws/data/safekeeper/9529d95d734cf1a3c329f69c0fe2f1d0/11ddd8a0dadbfd8df065ca17967a47eb/00000001000000000000000F",
+      "size": 16777216
+    }
+  ],
+  "closed_wal_segments": 15,
+  "ownership_markers_verified": true,
+  "application_state_list_denied": true,
+  "application_state_read_denied": true
+}

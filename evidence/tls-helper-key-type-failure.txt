@@ -1,0 +1,5 @@
+2026-09-10T13:02:11.993857Z ERROR start_compute:prepare_pgdata: could not create key file error=unknown TLS key type
+2026-09-10T13:02:12.994252Z ERROR start_compute:prepare_pgdata: could not create key file error=unknown TLS key type
+2026-09-10T13:02:13.995032Z ERROR start_compute:prepare_pgdata: could not create key file error=unknown TLS key type
+2026-09-10T13:02:14.995434Z ERROR start_compute:prepare_pgdata: could not create key file error=unknown TLS key type
+2026-09-10T13:02:15.996170Z ERROR start_compute:prepare_pgdata: could not create key file error=unknown TLS key type

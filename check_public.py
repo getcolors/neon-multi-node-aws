@@ -42,7 +42,7 @@ for label,secret,mode,expected in [
     assert r.returncode != 0 and expected in r.stderr, label+': expected specific refusal, not arbitrary failure'
     passed(label)
 r=sql('ALTER ROLE '+cfg['neon-role']+' WITH SUPERUSER',expect=False)
-assert r.returncode != 0 and ('permission denied' in r.stderr or 'must be superuser' in r.stderr), 'Application privilege escalation not specifically refused'
+assert r.returncode != 0 and ('permission denied' in r.stderr or 'must be superuser' in r.stderr or 'Only roles with' in r.stderr), 'Application privilege escalation not specifically refused'
 passed('application role cannot escalate to superuser')
 
 witness_file=root/'evidence'/'continuity.json'

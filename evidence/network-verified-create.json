@@ -1,0 +1,223 @@
+{
+  "profile": "neon-multi-node-aws",
+  "security_groups": 3,
+  "checks": [
+    {
+      "source": "operator",
+      "target": "safekeeper-2",
+      "port": 22,
+      "reachable": true
+    },
+    {
+      "source": "operator",
+      "target": "safekeeper-2",
+      "port": 9898,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "safekeeper-2",
+      "port": 6400,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "safekeeper-2",
+      "port": 50051,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "safekeeper-2",
+      "port": 5454,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "safekeeper-2",
+      "port": 7676,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "safekeeper-2",
+      "port": 3080,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "compute-0",
+      "port": 22,
+      "reachable": true
+    },
+    {
+      "source": "operator",
+      "target": "compute-0",
+      "port": 9898,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "compute-0",
+      "port": 6400,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "compute-0",
+      "port": 50051,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "compute-0",
+      "port": 5454,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "compute-0",
+      "port": 7676,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "compute-0",
+      "port": 3080,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "pageserver-0",
+      "port": 22,
+      "reachable": true
+    },
+    {
+      "source": "operator",
+      "target": "pageserver-0",
+      "port": 9898,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "pageserver-0",
+      "port": 6400,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "pageserver-0",
+      "port": 50051,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "pageserver-0",
+      "port": 5454,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "pageserver-0",
+      "port": 7676,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "pageserver-0",
+      "port": 3080,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "safekeeper-0",
+      "port": 22,
+      "reachable": true
+    },
+    {
+      "source": "operator",
+      "target": "safekeeper-0",
+      "port": 9898,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "safekeeper-0",
+      "port": 6400,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "safekeeper-0",
+      "port": 50051,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "safekeeper-0",
+      "port": 5454,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "safekeeper-0",
+      "port": 7676,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "safekeeper-0",
+      "port": 3080,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "safekeeper-1",
+      "port": 22,
+      "reachable": true
+    },
+    {
+      "source": "operator",
+      "target": "safekeeper-1",
+      "port": 9898,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "safekeeper-1",
+      "port": 6400,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "safekeeper-1",
+      "port": 50051,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "safekeeper-1",
+      "port": 5454,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "safekeeper-1",
+      "port": 7676,
+      "reachable": false
+    },
+    {
+      "source": "operator",
+      "target": "safekeeper-1",
+      "port": 3080,
+      "reachable": false
+    },
+    {
+      "source": "safekeeper-0",
+      "target": "compute-0",
+      "port": 55433,
+      "reachable": false
+    }
+  ],
+  "passed": true
+}

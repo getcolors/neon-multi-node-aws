@@ -17,6 +17,9 @@ for role in roles:
         r=subprocess.run(['ssh','-o','BatchMode=yes',alias,'sudo','-n','docker','inspect','--format',"'"+fmt+"'",ident],capture_output=True,text=True,timeout=30)
         assert r.returncode==0, 'Container inspection failed'
         state,image,digest,restarts,created,name=map(json.loads,r.stdout.strip().split('|'))
+        expected_image=cfg['neon-compute-image'] if role=='compute-0' else cfg['neon-image']
+        assert image==expected_image, 'Container image differs from desired immutable pin: '+alias
+        assert state['Status']=='running' and state.get('Health',{}).get('Status') != 'unhealthy', 'Container status or healthcheck failed: '+alias
         assert state['Running'] and not state['Restarting'] and not state['OOMKilled'], 'Unhealthy container: '+alias
         containers.append({'id':ident,'name':name,'image':image,'digest':digest,'created':created,'restarts':restarts,'state':state['Status']})
     rows.append({'alias':alias,'containers':containers,'healthy':True})

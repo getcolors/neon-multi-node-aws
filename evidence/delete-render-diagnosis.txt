@@ -1,0 +1,18 @@
+Delete 1 local runner diagnosis, 2026-09-10 UTC
+
+The published delete failed before running the writer-stop playbook:
+  Cannot run program "ansible-playbook" (in directory
+  "/home/ubuntu/code/getcolors/neon-multi-node-aws/./.colors/neon-multi-node-aws/neon-multi-node-ansible"):
+  Exec failed, error: 2 (No such file or directory)
+
+Independent operator checks immediately after failure:
+  command -v ansible-playbook: /home/ubuntu/.local/bin/ansible-playbook
+  ansible-playbook --version: ansible-playbook [core 2.20.3]
+  ls of the referenced working directory: No such file or directory
+
+Pinned Green scaffold contract (src/green/scaffold.clj::scaffold) removes
+targets when :green/event is :delete. Package run-play incorrectly passed
+that event when it needed to render cleanup.yml and inventory.json first.
+The missing working directory, rather than the installed executable, caused
+the process launch failure. No writer-stop command or downstream resource
+deletion ran. The workflow failed closed before application storage deletion.

@@ -1,0 +1,34 @@
+
+PLAY [Stop every writer before managed storage deletion] ***********************
+
+TASK [Stop runtime when present and independently prove no writers] ************
+ok: [safekeeper-0]
+ok: [safekeeper-2]
+ok: [safekeeper-1]
+ok: [pageserver-0]
+ok: [compute-0]
+
+TASK [Report independent writer absence for this host] *************************
+ok: [compute-0] => {
+    "msg": "WRITERS_STOPPED compute-0 PASS independent absence of Neon containers and writer processes"
+}
+ok: [pageserver-0] => {
+    "msg": "WRITERS_STOPPED pageserver-0 PASS independent absence of Neon containers and writer processes"
+}
+ok: [safekeeper-0] => {
+    "msg": "WRITERS_STOPPED safekeeper-0 PASS independent absence of Neon containers and writer processes"
+}
+ok: [safekeeper-1] => {
+    "msg": "WRITERS_STOPPED safekeeper-1 PASS independent absence of Neon containers and writer processes"
+}
+ok: [safekeeper-2] => {
+    "msg": "WRITERS_STOPPED safekeeper-2 PASS independent absence of Neon containers and writer processes"
+}
+
+PLAY RECAP *********************************************************************
+compute-0                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+pageserver-0               : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+safekeeper-0               : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+safekeeper-1               : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+safekeeper-2               : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

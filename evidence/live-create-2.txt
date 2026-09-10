@@ -1,0 +1,174 @@
+Checking out: https://github.com/getcolors/neon-multi-node.git at b13687c026eb01bed886aeaca214e560e7282904
+>>> :neon-multi-node/start (create)
+<<< :neon-multi-node/start (28ms)
+>>> :neon-multi-node/infrastructure (create)
+>>> :colors-compute/dispatch (create)
+<<< :colors-compute/dispatch (0ms)
+>>> :colors-compute/node (create)
+>>> :colors-compute/node (create)
+>>> :colors-compute/node (create)
+>>> :colors-compute/node (create)
+>>> :colors-compute/node (create)
+<<< :colors-compute/node (45209ms)
+<<< :colors-compute/node (106783ms)
+<<< :colors-compute/node (111233ms)
+<<< :colors-compute/node (112519ms)
+<<< :colors-compute/node (115663ms)
+>>> :colors-compute/join (create)
+<<< :colors-compute/join (0ms)
+<<< :neon-multi-node/infrastructure (255601ms)
+>>> :neon-multi-node/storage (create)
+<<< :neon-multi-node/storage (22596ms)
+>>> :neon-multi-node/dns (create)
+<<< :neon-multi-node/dns (5811ms)
+>>> :neon-multi-node/ssh-config (create)
+<<< :neon-multi-node/ssh-config (1561ms)
+>>> :neon-multi-node/ansible (create)
+<<< :neon-multi-node/ansible (308151ms)
+Ansible failed: 
+PLAY [Prepare isolated Neon roles] *********************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [safekeeper-2]
+ok: [safekeeper-1]
+ok: [compute-0]
+ok: [pageserver-0]
+ok: [safekeeper-0]
+
+TASK [Install runtime packages] ************************************************
+ok: [compute-0]
+ok: [pageserver-0]
+ok: [safekeeper-1]
+ok: [safekeeper-0]
+ok: [safekeeper-2]
+
+TASK [Enable Docker] ***********************************************************
+ok: [safekeeper-0]
+ok: [safekeeper-2]
+ok: [safekeeper-1]
+ok: [pageserver-0]
+ok: [compute-0]
+
+TASK [Create private configuration directories] ********************************
+ok: [safekeeper-0] => (item=/etc/neon)
+ok: [safekeeper-2] => (item=/etc/neon)
+ok: [safekeeper-1] => (item=/etc/neon)
+ok: [compute-0] => (item=/etc/neon)
+ok: [pageserver-0] => (item=/etc/neon)
+ok: [safekeeper-0] => (item=/opt/neon)
+ok: [safekeeper-2] => (item=/opt/neon)
+ok: [safekeeper-1] => (item=/opt/neon)
+ok: [pageserver-0] => (item=/opt/neon)
+ok: [compute-0] => (item=/opt/neon)
+
+TASK [Write deployment configuration] ******************************************
+ok: [safekeeper-2]
+ok: [pageserver-0]
+ok: [safekeeper-1]
+ok: [safekeeper-0]
+ok: [compute-0]
+
+TASK [Install scoped application storage credentials] **************************
+ok: [safekeeper-0]
+ok: [safekeeper-2]
+ok: [pageserver-0]
+ok: [safekeeper-1]
+ok: [compute-0]
+
+TASK [Install runtime scripts] *************************************************
+changed: [safekeeper-1] => (item=runtime.py)
+changed: [safekeeper-2] => (item=runtime.py)
+changed: [safekeeper-0] => (item=runtime.py)
+changed: [compute-0] => (item=runtime.py)
+changed: [pageserver-0] => (item=runtime.py)
+ok: [safekeeper-1] => (item=scramgen.py)
+ok: [safekeeper-0] => (item=scramgen.py)
+ok: [safekeeper-2] => (item=scramgen.py)
+ok: [pageserver-0] => (item=scramgen.py)
+ok: [compute-0] => (item=scramgen.py)
+ok: [safekeeper-1] => (item=bootstrap.sh)
+ok: [safekeeper-0] => (item=bootstrap.sh)
+ok: [safekeeper-2] => (item=bootstrap.sh)
+ok: [pageserver-0] => (item=bootstrap.sh)
+ok: [compute-0] => (item=bootstrap.sh)
+
+TASK [Install compute specification template] **********************************
+changed: [pageserver-0]
+changed: [compute-0]
+changed: [safekeeper-1]
+changed: [safekeeper-2]
+changed: [safekeeper-0]
+
+TASK [Render role configuration] ***********************************************
+ok: [safekeeper-0]
+ok: [safekeeper-1]
+ok: [pageserver-0]
+ok: [compute-0]
+ok: [safekeeper-2]
+
+PLAY [Start durable storage] ***************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [safekeeper-0]
+ok: [safekeeper-1]
+ok: [pageserver-0]
+ok: [safekeeper-2]
+
+TASK [Start role containers] ***************************************************
+ok: [pageserver-0]
+ok: [safekeeper-0]
+ok: [safekeeper-1]
+ok: [safekeeper-2]
+
+TASK [Wait for storage API] ****************************************************
+ok: [safekeeper-0]
+ok: [safekeeper-2]
+ok: [safekeeper-1]
+ok: [pageserver-0]
+
+PLAY [Reconcile tenant and start TLS compute] **********************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [compute-0]
+
+TASK [Reconcile remote tenant ownership and timeline] **************************
+ok: [compute-0]
+
+TASK [Obtain publicly trusted certificate] *************************************
+ok: [compute-0]
+
+TASK [Create readable TLS directory] *******************************************
+ok: [compute-0]
+
+TASK [Install TLS certificate and private key] *********************************
+ok: [compute-0] => (item=(censored due to no_log))
+ok: [compute-0] => (item=(censored due to no_log))
+
+TASK [Install certificate renewal deployment hook] *****************************
+ok: [compute-0]
+
+TASK [Enable certificate renewal timer] ****************************************
+ok: [compute-0]
+
+TASK [Start compute] ***********************************************************
+ok: [compute-0]
+
+TASK [Prove observable acceptance gates] ***************************************
+[ERROR]: Task failed: Module failed: non-zero return code
+Origin: /home/ubuntu/code/getcolors/neon-multi-node-aws/.colors/neon-multi-node-aws/neon-multi-node-ansible/site.yml:106:7
+
+104       ansible.builtin.command: python3 /opt/neon/runtime.py start
+105       changed_when: false
+106     - name: Prove observable acceptance gates
+          ^ column 7
+
+fatal: [compute-0]: FAILED! => {"changed": false, "cmd": ["python3", "/opt/neon/runtime.py", "check"], "delta": "0:03:00.483720", "end": "2026-09-10 13:02:58.998764", "msg": "non-zero return code", "rc": 1, "start": "2026-09-10 12:59:58.515044", "stderr": "FAIL RuntimeError: condition timed out: RuntimeError: SQL gate failed: psql: error: connection to server at \"127.0.0.1\", port 55433 failed: server closed the connection unexpectedly\n\tThis probably means the server terminated abnormally\n\tbefore or while processing the request.", "stderr_lines": ["FAIL RuntimeError: condition timed out: RuntimeError: SQL gate failed: psql: error: connection to server at \"127.0.0.1\", port 55433 failed: server closed the connection unexpectedly", "\tThis probably means the server terminated abnormally", "\tbefore or while processing the request."], "stdout": "", "stdout_lines": []}
+
+PLAY RECAP *********************************************************************
+compute-0                  : ok=17   changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+pageserver-0               : ok=12   changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+safekeeper-0               : ok=12   changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+safekeeper-1               : ok=12   changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+safekeeper-2               : ok=12   changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+

@@ -1,0 +1,41 @@
+>>> :neon-multi-node/start (rehearse)
+<<< :neon-multi-node/start (55606ms)
+>>> :neon-multi-node/rehearsal (rehearse)
+<<< :neon-multi-node/rehearsal (18349ms)
+Ansible failed: 
+PLAY [Prove compute replacement preserves data] ********************************
+
+TASK [Recreate disposable compute] *********************************************
+changed: [compute-0]
+
+TASK [Prove retained witness] **************************************************
+changed: [compute-0]
+
+PLAY [Prove one safekeeper loss and recovery] **********************************
+
+TASK [Exercise each safekeeper independently] **********************************
+included: /home/ubuntu/code/getcolors/neon-multi-node-aws/.colors/neon-multi-node-aws/neon-multi-node-ansible/rehearse-member.yml for compute-0 => (item=safekeeper-0)
+included: /home/ubuntu/code/getcolors/neon-multi-node-aws/.colors/neon-multi-node-aws/neon-multi-node-ansible/rehearse-member.yml for compute-0 => (item=safekeeper-1)
+included: /home/ubuntu/code/getcolors/neon-multi-node-aws/.colors/neon-multi-node-aws/neon-multi-node-ansible/rehearse-member.yml for compute-0 => (item=safekeeper-2)
+
+TASK [Stop safekeeper member] **************************************************
+changed: [compute-0 -> safekeeper-0(54.226.43.101)]
+
+TASK [Prove acknowledged write with two members] *******************************
+[ERROR]: Task failed: Module failed: non-zero return code
+Origin: /home/ubuntu/code/getcolors/neon-multi-node-aws/.colors/neon-multi-node-aws/neon-multi-node-ansible/rehearse-member.yml:7:7
+
+5       ansible.builtin.command: docker compose -f /opt/neon/compose.json stop safekeeper
+6       delegate_to: "{{ member }}"
+7     - name: Prove acknowledged write with two members
+        ^ column 7
+
+fatal: [compute-0]: FAILED! => {"changed": true, "cmd": ["python3", "/opt/neon/runtime.py", "write", "safekeeper-0"], "delta": "0:00:00.211556", "end": "2026-09-10 13:13:50.057421", "msg": "non-zero return code", "rc": 1, "start": "2026-09-10 13:13:49.845865", "stderr": "FAIL AssertionError: ", "stderr_lines": ["FAIL AssertionError: "], "stdout": "", "stdout_lines": []}
+
+TASK [Restore safekeeper member] ***********************************************
+changed: [compute-0 -> safekeeper-0(54.226.43.101)]
+
+PLAY RECAP *********************************************************************
+compute-0                  : ok=7    changed=4    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+

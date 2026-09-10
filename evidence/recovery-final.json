@@ -1,0 +1,52 @@
+{
+  "profile": "neon-multi-node-aws",
+  "checked_at": "2026-09-10T13:32:16Z",
+  "trusted_external_tls": true,
+  "acknowledged_witnesses": [
+    {
+      "id": "quorum-ba74b5fee97846fc86a0fee8f730b9c8",
+      "value": "98f2427359bb45389f20ca07e3305bff",
+      "member": "safekeeper-0"
+    },
+    {
+      "id": "quorum-0f34f2a4ce124ac9aad82d5a3360333d",
+      "value": "c4140fdc929b494dbc54b576807a429b",
+      "member": "safekeeper-1"
+    },
+    {
+      "id": "quorum-6fa4dceab21e4bac9fb9eeb3d3720845",
+      "value": "c70c08c993454ef69cb7b69921eeeb07",
+      "member": "safekeeper-2"
+    },
+    {
+      "id": "quorum-f8ddbe14b06d49d0a17d323a6e36d4ed",
+      "value": "0cb080bac6f54818929adad43f6a2dae",
+      "member": "safekeeper-0"
+    },
+    {
+      "id": "quorum-02d768177ea044858bf23bdcac4d3688",
+      "value": "28fbe004a4b942c69e63589141a92e88",
+      "member": "safekeeper-1"
+    },
+    {
+      "id": "quorum-3a6f48eea29c4dd4a602439f6cfe5fa9",
+      "value": "30c95d316100497aa8cee3412a2d51d8",
+      "member": "safekeeper-2"
+    }
+  ],
+  "acknowledged_witnesses_verified": 6,
+  "members_covered": [
+    "safekeeper-0",
+    "safekeeper-1",
+    "safekeeper-2"
+  ],
+  "uncertain_write_observed": {
+    "present": true,
+    "values": [
+      "possibly-committed"
+    ],
+    "interpretation": "Observed after recovery; a timeout did not establish commit or rollback."
+  },
+  "s3_attachment_generation": 3,
+  "verified": true
+}

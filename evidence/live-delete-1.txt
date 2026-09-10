@@ -1,0 +1,5 @@
+>>> :neon-multi-node/start (delete)
+<<< :neon-multi-node/start (49559ms)
+>>> :neon-multi-node/ansible (delete)
+<<< :neon-multi-node/ansible (39ms)
+Ansible failed: Cannot run program "ansible-playbook" (in directory "/home/ubuntu/code/getcolors/neon-multi-node-aws/./.colors/neon-multi-node-aws/neon-multi-node-ansible"): Exec failed, error: 2 (No such file or directory) 

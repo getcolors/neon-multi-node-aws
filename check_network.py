@@ -8,6 +8,7 @@ nodes={next(t['Value'] for t in i['Tags'] if t['Key']=='Name').removeprefix(prof
 sgs=ec2.describe_security_groups(GroupIds=sorted({s['GroupId'] for i in nodes.values() for s in i['SecurityGroups']}))['SecurityGroups'];assert len(sgs)==3
 for sg in sgs:
     for rule in sg['IpPermissions']:
+        assert not rule.get('Ipv6Ranges') and not rule.get('UserIdGroupPairs') and not rule.get('PrefixListIds'), 'Unexpected alternative ingress source'
         assert rule['IpProtocol']=='tcp' and rule['FromPort']==rule['ToPort']
         port=rule['FromPort'];src={r['CidrIp'] for r in rule.get('IpRanges',[])}
         if port==22:assert src==set(cfg['ssh-sources'])

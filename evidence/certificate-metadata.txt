@@ -1,0 +1,5 @@
+subject=CN = neon-multi-node-aws.bigconfig.online
+issuer=C = US, O = Let's Encrypt, CN = YE2
+notBefore=Sep 10 11:49:43 2026 GMT
+notAfter=Dec  9 11:49:42 2026 GMT
+sha256 Fingerprint=A0:36:5D:73:99:B8:DB:62:0E:D1:25:1A:26:AF:A5:08:E4:FE:C1:4F:6F:47:C4:8A:6A:3D:39:68:F3:D8:7B:36

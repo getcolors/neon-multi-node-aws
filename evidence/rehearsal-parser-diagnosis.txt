@@ -1,0 +1,29 @@
+Rehearsal 1 SQL result parser diagnosis (2026-09-10 UTC)
+
+Published runtime used psql -w -X -v ON_ERROR_STOP=1 -Atc and returned stdout's last line.
+Rehearsal failed immediately after stopping safekeeper-0 and issuing INSERT ... RETURNING:
+  stderr: FAIL AssertionError:
+The playbook's always block restored safekeeper-0.
+
+Independent read-only probes over the generated compute SSH alias returned:
+  outage rows present: 1
+  ledger exists: False
+  read-only transaction result: ROLLBACK
+
+The row count came from SELECT count(*) FROM public.colors_witness WHERE id LIKE 'quorum-%'.
+Ledger existence checked /etc/neon/rehearsal-witnesses.json without printing its content.
+The last probe called the same runtime SQL helper with BEGIN READ ONLY; SELECT 1; ROLLBACK.
+The returned ROLLBACK instead of 1 proves trailing psql command tags interfered with last-line parsing.
+INSERT ... RETURNING similarly emits its returned value followed by INSERT 0 1 without quiet mode.
+The acknowledged outage row existed, but the assertion failed before recording the witness ledger.
+This failure is not evidence of data loss. That unledgered row is not counted as a passed recovery witness.
+
+Fix: psql -q suppresses command tags while preserving returned rows and errors.
+Package source commit: 9108620 (Suppress psql command tags when verifying acknowledged outage writes).
+Launcher commit: a875af5 (pins source 9108620).
+Eight runtime tests passed, including RETURNING output with a trailing INSERT command tag.
+No remote mutation was performed by these diagnostic probes.
+
+After published create 4 refreshed runtime from source 9108620, the identical read-only probe returned:
+  read-only transaction result: 1
+This independently verifies quiet-mode result parsing against the live psql client.

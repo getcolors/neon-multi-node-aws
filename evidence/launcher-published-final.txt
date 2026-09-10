@@ -1,0 +1,1 @@
+PASS copied launcher, empty credential environment, nested discovery, build and four dry-run verbs
