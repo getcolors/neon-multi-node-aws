@@ -5,19 +5,19 @@
       "source": "getcolors/neon-multi-node",
       "sourceType": "github",
       "skillPath": "skills/package-neon-multi-node-blue/SKILL.md",
-      "computedHash": "bb1d883fd8946c0558bec25226c279846135566f6755ff183dd7d71d2c82cd59"
+      "computedHash": "5d69922f81cff3471f5f89a7c5e9195a1c98d8f68c7a0658618456f422d71227"
     },
     "package-neon-multi-node-green": {
       "source": "getcolors/neon-multi-node",
       "sourceType": "github",
       "skillPath": "skills/package-neon-multi-node-green/SKILL.md",
-      "computedHash": "cd88b13648580517dd5d57ad7c8e2b7b2fe4a4718121e7f0d531ecd20c1195ed"
+      "computedHash": "9f91032c07bd7f3048d1ea942e05b8ddf9555a2fa0af3a51f97687768d4b2921"
     },
     "package-neon-multi-node-red": {
       "source": "getcolors/neon-multi-node",
       "sourceType": "github",
       "skillPath": "skills/package-neon-multi-node-red/SKILL.md",
-      "computedHash": "48acafc1ed3f7e68e64b77575de68566ac6031d7419309be7272e65153ebdec9"
+      "computedHash": "535cd2178e54c8c96fbfcb1725f023a626cfc6f6f7321e933dc1f26835656366"
     }
   }
 }
